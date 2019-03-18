@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6 col-12">
-                    <a href="#"><img src="/frontEnd/img/logos/logo-footer.png" id="footer_logo" alt="logo"></a>
+                    <a href="#"><img src="/frontEnd/img/logos/logo2.png" id="footer_logo" alt="logo"></a>
                     <p class="mt-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <ul class="social-links-footer">
                         <li><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="footer-1-bar">
-                <p>SpecThemes © 2019. All Rights Reserved.</p>
+                <p>DirectGroup © 2019. All Rights Reserved.</p>
             </div>
         </div>
     </div>

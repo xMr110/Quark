@@ -9,7 +9,6 @@
         <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
     </div>
     <!-- Preloader End -->
-    @include('layouts.navbar')
 
 
     <!-- Start revolution slider -->
@@ -168,223 +167,267 @@
     </div>
     <!-- End revolution slider -->
 
-    <!--Features Section START-->
+
+    <!--Info Section START-->
     <div class="section-block">
-        <div class="section-angle"></div>
         <div class="container">
-            <div class="section-heading text-center">
-                <small>PROFESSIONAL SERVICES</small>
-                <h2 class="semi-bold font-size-35">Planning & Consulting</h2>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-12">
+                    <img src="/frontEnd/img/content/about/about-3.jpg" class="rounded-border shadow-primary" alt="">
+                </div>
+                <div class="col-md-6 col-sm-6 col-12">
+                    <div class="pl-30-md">
+                        <div class="section-heading text-left mt-5">
+                            <small class="uppercase">Who we are</small>
+                            <h3 class="semi-bold font-size-32">All-in-One Professional Solution for <span class="primary-color">Your Business</span></h3>
+                            <div class="section-heading-line line-thin"></div>
+                            <div class="text-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor.</p>
+                            </div>
+                        </div>
+                        <div class="primary-list mt-25">
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i>Vision, passion and marketing excellence.</li>
+                                <li><i class="fas fa-check-circle"></i>Growing your brand through health education.</li>
+                                <li><i class="fas fa-check-circle"></i>Get answers and advices from Professionals.</li>
+                            </ul>
+                        </div>
+                        <div class="mt-40">
+                            <a href="#" class="button-primary button-md">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Info section END-->
+
+    <!--Industries START-->
+    <div class="section-block">
+        <div class="container">
+            <div class="section-heading text-left">
+                <h4 class="semi-bold">Industries</h4>
                 <div class="section-heading-line line-thin"></div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<br>ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
             </div>
             <div class="row mt-30">
-                <div class="col-md-3 col-sm-6 col-12">
-                    <div class="features-box-2">
-                        <div class="features-box-2-icon">
-                            <i class="icon-search-2"></i>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="service-box-2">
+                        <div class="service-box-2-icon">
+                            <a href="#"> <i class="fas fa-arrow-right"></i> </a>
                         </div>
-                        <h4>Software and Research</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-12">
-                    <div class="features-box-2">
-                        <div class="features-box-2-icon">
-                            <i class="icon-megaphone"></i>
-                        </div>
-                        <h4>Business Services</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-12">
-                    <div class="features-box-2">
-                        <div class="features-box-2-icon">
-                            <i class="icon-graph"></i>
-                        </div>
-                        <h4>Quality Resourcing</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-12">
-                    <div class="features-box-2">
-                        <div class="features-box-2-icon">
-                            <i class="icon-wallet"></i>
-                        </div>
-                        <h4>Business Services</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-40">
-                <a href="#" class="button-grey-bordered button-md text-uppercase">Become a client</a>
-            </div>
-        </div>
-    </div>
-    <!--Features Section END-->
-
-    <!--Countups Section START-->
-    <div class="container-fluid pl-0 pr-0">
-        <div class="row no-gutters">
-            <div class="col-md-6 col-sm-12 col-12">
-                <div class="full-background min-350" style="background-image: url(/frontEnd/img/content/business/home4.jpg);">
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12 col-12">
-                <div class="padding-10-perc grey-bg background-80 background-no-repeat background-center" style="background-image: url('/frontEnd//frontEnd/img/content/bgs/bg1.png')">
-                    <div class="section-heading text-left">
-                        <small class="grey-color font-size-20 font-weight-normal">Our Growth Rate Of Last 25 Years</small>
-                        <h4 class="semi-bold font-size-35">We’re Constantly Improving Our Skills to Fulfill Projects</h4>
-                    </div>
-                    <div class="row mt-45">
-                        <div class="col-sm-5 col-12">
-                            <div class="countup-box-2">
-                                <h3 class="countup">650</h3><span> +</span>
-                                <h4>Team Members</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-5 col-12 offset-sm-1">
-                            <div class="countup-box-2">
-                                <h3 class="countup">3800</h3><span> +</span>
-                                <h4>Happy Clients</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                        <img src="/frontEnd/img/content/cases/c-1.jpg" alt="img">
+                        <div class="service-box-2-overlay">
+                            <div class="service-box-2-text">
+                                <h6><a href="#">Customer Products</a></h6>
+                                <h4>We're knowledgeable about making benefits.</h4>
                             </div>
                         </div>
                     </div>
-                    <div class="mt-40">
-                        <a href="#" class="button-primary button-md">Learn More</a>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="service-box-2">
+                        <div class="service-box-2-icon">
+                            <a href="#"> <i class="fas fa-arrow-right"></i> </a>
+                        </div>
+                        <img src="/frontEnd/img/content/cases/c-2.jpg" alt="img">
+                        <div class="service-box-2-overlay">
+                            <div class="service-box-2-text">
+                                <h6><a href="#">Financial Services</a></h6>
+                                <h4>We're knowledgeable about making benefits.</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="service-box-2">
+                        <div class="service-box-2-icon">
+                            <a href="#"> <i class="fas fa-arrow-right"></i> </a>
+                        </div>
+                        <img src="/frontEnd/img/content/cases/c-3.jpg" alt="img">
+                        <div class="service-box-2-overlay">
+                            <div class="service-box-2-text">
+                                <h6><a href="#">Business Services</a></h6>
+                                <h4>We're knowledgeable about making benefits.</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="service-box-2">
+                        <div class="service-box-2-icon">
+                            <a href="#"> <i class="fas fa-arrow-right"></i> </a>
+                        </div>
+                        <img src="/frontEnd/img/content/cases/c-4.jpg" alt="img">
+                        <div class="service-box-2-overlay">
+                            <div class="service-box-2-text">
+                                <h6><a href="#">Sensitivity Analysis</a></h6>
+                                <h4>We're knowledgeable about making benefits.</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="service-box-2">
+                        <div class="service-box-2-icon">
+                            <a href="#"> <i class="fas fa-arrow-right"></i> </a>
+                        </div>
+                        <img src="/frontEnd/img/content/cases/c-5.jpg" alt="img">
+                        <div class="service-box-2-overlay">
+                            <div class="service-box-2-text">
+                                <h6><a href="#">Customer Products</a></h6>
+                                <h4>We're knowledgeable about making benefits.</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="service-box-2">
+                        <div class="service-box-2-icon">
+                            <a href="#"> <i class="fas fa-arrow-right"></i> </a>
+                        </div>
+                        <img src="/frontEnd/img/content/cases/c-6.jpg" alt="img">
+                        <div class="service-box-2-overlay">
+                            <div class="service-box-2-text">
+                                <h6><a href="#">Financial Services</a></h6>
+                                <h4>We're knowledgeable about making benefits.</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="service-box-2">
+                        <div class="service-box-2-icon">
+                            <a href="#"> <i class="fas fa-arrow-right"></i> </a>
+                        </div>
+                        <img src="/frontEnd/img/content/business/service-3-3.jpg" alt="img">
+                        <div class="service-box-2-overlay">
+                            <div class="service-box-2-text">
+                                <h6><a href="#">Business Services</a></h6>
+                                <h4>We're knowledgeable about making benefits.</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="service-box-2">
+                        <div class="service-box-2-icon">
+                            <a href="#"> <i class="fas fa-arrow-right"></i> </a>
+                        </div>
+                        <img src="/frontEnd/img/content/business/service-4-3.jpg" alt="img">
+                        <div class="service-box-2-overlay">
+                            <div class="service-box-2-text">
+                                <h6><a href="#">Sensitivity Analysis</a></h6>
+                                <h4>We're knowledgeable about making benefits.</h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--Countups Section END-->
+    <!--Industries END-->
 
-    <!-- Clients START -->
-    <div class="section-block">
+
+
+    <!-- Parallax Section START -->
+    <div class="section-block-parallax jarallax black-overlay-70" data-jarallax data-speed="0.6" style="background-image: url('/frontEnd/img/content/bgs/bg6.jpg');">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-12">
-                    <div class="pr-45-md">
-                        <div class="section-heading text-left">
-                            <h3 class="semi-bold font-size-30">Company Clients</h3>
-                            <div class="section-heading-line line-thin"></div>
-                        </div>
-                        <div class="text-content-big mt-25">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.</p>
-                        </div>
-                        <a href="#" class="button-simple mt-15">Become a client <i class="fa fa-arrow-right primary-color"></i></a>
+                <div class="col-md-10 col-sm-10 col-12">
+                    <div class="large-heading text-left">
+                        <small class="semi-bold primary-color">Making sense of global markets</small>
+                        <h4 class="semi-bold white-color">Knowing more about business, consumers and society. The compass for the market place.</h4>
+                        <p class="white-color">Knowledge. Identified & delivered. Your single source for buying market research.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-6 col-12">
-                    <div class="clients-grid">
-                        <img src="/frontEnd/img/partners/partner1.png" alt="client-image">
-                        <img src="/frontEnd/img/partners/partner2.png" alt="client-image">
-                        <img src="/frontEnd/img/partners/partner3.png" alt="client-image">
-                        <img src="/frontEnd/img/partners/partner6.png" alt="client-image">
-                        <img src="/frontEnd/img/partners/partner5.png" alt="client-image">
-                        <img src="/frontEnd/img/partners/partner4.png" alt="client-image">
+                <div class="col-md-2 col-sm-2 col-12">
+                    <!-- Video Button Start -->
+                    <div class="video-button center-holder mt-30">
+                        <button class="video-video-play-icon pulsebox-2" data-izimodal-open=".izimodal">
+                            <i class="fa fa-play"></i>
+                        </button>
                     </div>
+                    <!-- Video Button End -->
+
+                    <!-- Modal Start -->
+                    <div class="izimodal" data-iziModal-width="800px" data-iziModal-fullscreen="true">
+                        <iframe height="415" src="https://www.youtube.com/embed/nrJtHemSPW4" class="full-width shadow-primary"></iframe>
+                    </div>
+                    <!-- Modal End -->
                 </div>
             </div>
         </div>
     </div>
-    <!-- Clients END -->
+    <!-- Parallax Section END -->
 
-    <!--Services START-->
-    <div class="section-block grey-bg">
-        <div class="background-shape bs-right"></div>
+
+
+    <!--Literatures START-->
+
+    <div class="section-block-bg">
         <div class="container">
             <div class="section-heading text-center">
-                <h3 class="semi-bold">30 Years Experience in the Business Industry</h3>
+                <h3 class="semi-bold font-size-35">Achieving marketing superiority</h3>
                 <div class="section-heading-line line-thin"></div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt<br>ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
             </div>
-            <div class="row mt-40">
-                <div class="col-md-4 col-sm-12 col-12">
-                    <div class="service-block-2">
-                        <img src="/frontEnd/img/content/services/s1.jpg" alt="img">
-                        <div class="service-block-2-content">
-                            <h4><a href="#">Insurance Consulting</a></h4>
-                            <strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</strong>
-                            <a href="#" class="service-block-2-btn">Learn more <i class="fa fa-arrow-right primary-color"></i></a>
+            <div class="row mt-50">
+                <div class="col-md-3 col-sm-12 col-12">
+                    <div class="service-block">
+                        <img src="/frontEnd/img/content/business/service-4.jpg" alt="img">
+                        <div class="service-block-content">
+                            <h4>Business Development</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+                            <a href="#" class="service-block-content-button"><i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-12 col-12">
-                    <div class="service-block-2">
-                        <img src="/frontEnd/img/content/services/s2.jpg" alt="img">
-                        <div class="service-block-2-content">
-                            <h4><a href="#">Marketing Consultancy</a></h4>
-                            <strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</strong>
-                            <a href="#" class="service-block-2-btn">Learn more <i class="fa fa-arrow-right primary-color"></i></a>
+                <div class="col-md-3 col-sm-12 col-12">
+                    <div class="service-block">
+                        <img src="/frontEnd/img/content/business/service-5.jpg" alt="img">
+                        <div class="service-block-content">
+                            <h4>Risk Management</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+                            <a href="#" class="service-block-content-button"><i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-12 col-12">
-                    <div class="service-block-2">
-                        <img src="/frontEnd/img/content/services/s3.jpg" alt="img">
-                        <div class="service-block-2-content">
-                            <h4><a href="#">Brand Management</a></h4>
-                            <strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</strong>
-                            <a href="#" class="service-block-2-btn">Learn more <i class="fa fa-arrow-right primary-color"></i></a>
+                <div class="col-md-3 col-sm-12 col-12">
+                    <div class="service-block">
+                        <img src="/frontEnd/img/content/business/service-3.jpg" alt="img">
+                        <div class="service-block-content">
+                            <h4>Business Accounting</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+                            <a href="#" class="service-block-content-button"><i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="text-center mt-30">
-                <a href="#" class="button-primary button-md">View All Services</a>
+                <div class="col-md-3 col-sm-12 col-12">
+                    <div class="service-block">
+                        <img src="/frontEnd/img/content/business/service-4.jpg" alt="img">
+                        <div class="service-block-content">
+                            <h4>Business Accounting</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed.</p>
+                            <a href="#" class="service-block-content-button"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!--Services END-->
 
-    <!--Testmonials START-->
-    <div class="section-block-grey background-center jarallax" data-jarallax data-speed="0.6" style="background-image: url('/frontEnd/img/content/testmonials/bg.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-12 col-12 offset-md-6">
-                    <div class="owl-carousel owl-theme testmonials-carousel-2 shadow-light mt-40">
-                        <div class="testmonial-item">
-                            <p>The seller has been incredibily helpfull in getting this layout to work for me and my client, ne has provided me with quick advice and support, i would recommend this seller to the community and will certainly aquire more of his designs as i need them 5 STARS</p>
-                            <div class="stars">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h4>Andrew Bright <span> / HR Specialist</span></h4>
-                        </div>
-                        <div class="testmonial-item">
-                            <p>The seller has been incredibily helpfull in getting this layout to work for me and my client, ne has provided me with quick advice and support, i would recommend this seller to the community and will certainly aquire more of his designs as i need them 5 STARS</p>
-                            <div class="stars">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h4>Andrew Bright <span> / HR Specialist</span></h4>
-                        </div>
-                        <div class="testmonial-item">
-                            <p>The seller has been incredibily helpfull in getting this layout to work for me and my client, ne has provided me with quick advice and support, i would recommend this seller to the community and will certainly aquire more of his designs as i need them 5 STARS</p>
-                            <div class="stars">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h4>Andrew Bright <span> / HR Specialist</span></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Testmonials END-->
+    <!--Literatures END-->
+
+
+
 
     <!--Contact START-->
     <div class="section-block">

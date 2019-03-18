@@ -6,6 +6,7 @@
         <title>@yield('title') - Quark</title>
 </head>
 <body>
+@include('layouts.navbar')
 
 @yield('content')
 
