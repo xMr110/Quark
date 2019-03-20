@@ -10,7 +10,6 @@
     </div>
     <!-- Preloader End -->
 
-
     <!-- Start revolution slider -->
     <div class="rev_slider_wrapper fs-slider-wrap bg-arrows">
         <div id="rev_slider" class="rev_slider fullscreenbanner">

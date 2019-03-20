@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Providers;
-
+use App\Models\Setting;
+use \Illuminate\Support\Facades\Cache;
+use \Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,26 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Schema::defaultStringLength(191);
+        view()->composer('*', function($view) {
+
+            if (! Cache::has('site_settings')) {
+                $settings = Cache::rememberForever('site_settings', function () {
+                    $settings = Setting::rows();
+                    return $settings;
+                });
+            } else {
+                $settings = Cache::get('site_settings');
+            }
+
+
+            return [
+                $view->with('settings', $settings),
+            ];
+        });
+        view()->composer('*', function($view) {
+
+        });
     }
 
     /**

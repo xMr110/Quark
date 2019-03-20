@@ -3,7 +3,7 @@
 <head>
     @include('layouts.meta')
     <!-- Title -->
-        <title>@yield('title') - Quark</title>
+        <title>@yield('title') - {{isset($settings->title)?$settings->title:''}}</title>
 </head>
 <body>
 @include('layouts.navbar')

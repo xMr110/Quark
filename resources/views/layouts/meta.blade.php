@@ -1,7 +1,8 @@
 <meta charset="UTF-8">
-<link rel="shortcut icon" href="/frontEnd/img/logos/logo-shortcut.png" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+@if(isset($settings->favicon))
+    <link rel="icon" type="/image/png" sizes="16x16" href="{{ url('/storage/' . $settings->favicon) }}">
+@endif
 <!-- Bootstrap CSS-->
 <link rel="stylesheet" type="text/css" href="/frontEnd/css/bootstrap.min.css">
 
