@@ -49,7 +49,7 @@ class IndustryController extends Controller
                 unlink(storage_path('/storage/'.$industry->image_path));
             }
             else{
-                $industry->image_path = $request->file('image_path')->store('packages','public');
+                $industry->image_path = $request->file('image_path')->store('industries','public');
             }
         }
         $industry->title = $request->get('title');
