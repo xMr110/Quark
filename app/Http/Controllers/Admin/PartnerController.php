@@ -36,7 +36,6 @@ class PartnerController extends Controller
         $partner->link = $request->link;
         $partner->save();
         return redirect(action('Admin\PartnersController@index'))->with('success','Partner Added');
-
     }
     public function update(PartnerRequest $request,$id)
     {
