@@ -26,7 +26,6 @@ class LiteratureRequest extends FormRequest
         return [
             'title'=>'required',
             'description'=>'required',
-            'attachment'=>'required',
         ];
     }
 }

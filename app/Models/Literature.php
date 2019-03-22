@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Literature extends Model
 {
-    protected $fillable=['title','description','attachment'];
+    protected $fillable=['title','description','attachment','industry_id','image_path'];
 
 
     public function industry()

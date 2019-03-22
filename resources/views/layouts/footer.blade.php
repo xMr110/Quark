@@ -5,13 +5,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6 col-12">
-                    <a href="#"><img src="/frontEnd/img/logos/logo2.png" id="footer_logo" alt="logo"></a>
-                    <p class="mt-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="#"><img src="{{isset($settings)?$settings->logo!=''?url('/storage/'.$settings->logo):'':''}}" id="footer_logo" alt="logo"></a>
+                    <p class="mt-20">@lang('footer.description')</p>
                     <ul class="social-links-footer">
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="{{isset($settings)?$settings->facebook:''}}"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="{{isset($settings)?$settings->twitter:''}}"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="{{isset($settings)?$settings->instagram:''}}"><i class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 col-12">
@@ -19,53 +18,38 @@
                     <div class="row mt-25">
                         <div class="col-md-6 col-sm-6">
                             <ul class="footer-nav">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Our approach</a></li>
-                                <li><a href="#">Case Studies</a></li>
-                                <li><a href="#">Our team</a></li>
-                                <li><a href="#">Our approach</a></li>
-                                <li><a href="#">Accounting</a></li>
+                                <li><a href="/about">About Us</a></li>
+                                <li><a href="#">Our Products</a></li>
+                                <li><a href="#">Our Industries</a></li>
                             </ul>
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <ul class="footer-nav">
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Consulting</a></li>
-                                <li><a href="#">Development</a></li>
-                                <li><a href="#">Case Studies</a></li>
-                                <li><a href="#">Latest News</a></li>
-                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Our Literatures</a></li>
+                                <li><a href="#">Our Partners</a></li>
+                                <li><a href="/contact">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-12">
-                    <h2>Recent news</h2>
+                    <h2>Recent Literatures</h2>
                     <ul class="footer-news mt-25">
+                        @foreach($footerLits as $footerLit)
                         <li>
-                            <a href="#">Apartamento at ten: a decade of celebrating the everyday.</a>
-                            <strong><i class="fa fa-calendar"></i> 11 September 2018</strong>
+                            <a href="#">{{$footerLit->title}}</a>
+                            <strong><i class="fa fa-calendar"></i> {{$footerLit->created_at}}</strong>
                         </li>
-                        <li>
-                            <a href="#">Within the construction industry as their overdraft</a>
-                            <strong><i class="fa fa-calendar"></i> 11 September 2018</strong>
-                        </li>
+                            @endforeach
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 col-12">
-                    <h2>Subscribe</h2>
-                    <form class="footer-subscribe-form mt-25">
-                        <div class="d-table full-width">
-                            <div class="d-table-cell">
-                                <input type="text" placeholder="Your Email adress">
-                            </div>
-                            <div class="d-table-cell">
-                                <button type="submit"><i class="fas fa-envelope"></i></button>
-                            </div>
-                        </div>
-                    </form>
-                    <p class="mt-10">Get latest updates and offers.</p>
+                    <h2>Contact Us</h2>
+                    <h6 class="semi-bold">@lang('homepage.contactContactTitle')</h6>
+                    <ul class="grey-list mt-15">
+                        <li><i class="fa fa-phone"></i>{{isset($settings->phone)?$settings->phone:''}}</li>
+                        <li><i class="fa fa-envelope-open"></i>{{isset($settings->email)?$settings->email:''}}</li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-1-bar">

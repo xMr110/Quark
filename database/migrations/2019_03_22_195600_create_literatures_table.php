@@ -15,9 +15,11 @@ class CreateLiteraturesTable extends Migration
     {
         Schema::create('literatures', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('industry_id');
             $table->string('title');
             $table->text('description');
             $table->string('attachment')->nullable();
+            $table->string('image_path');
             $table->timestamps();
         });
     }

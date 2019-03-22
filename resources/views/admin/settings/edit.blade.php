@@ -64,6 +64,10 @@
                                                         role="tab"><span class="hidden-sm-up"><i
                                                     class="ti-user"></i></span> <span
                                                 class="hidden-xs-down">Contact Us</span></a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#video"
+                                                        role="tab"><span class="hidden-sm-up"><i
+                                                class="ti-user"></i></span> <span
+                                            class="hidden-xs-down">Video Section</span></a></li>
 
                             </ul>
                             <div class="tab-content tabcontent-border">
@@ -230,6 +234,42 @@
                                                        value="{{ $settings->addressLink ?? '' }}">
                                                 @if ($errors->has('addressLink'))
                                                     <small class="form-control-feedback">{{ $errors->first('addressLink') }}</small>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="tab-pane" id="video" role="tabpanel">
+                                    <div class="row p-t-20">
+                                        <div class="col-md-4">
+                                            <div class="form-group {{ $errors->has('videoTitle') ? 'has-danger' : '' }}">
+                                                <label class="control-label">Title</label>
+                                                <input type="text" name="videoTitle" class="form-control"
+                                                       value="{{ $settings->videoTitle ?? '' }}">
+                                                @if ($errors->has('videoTitle'))
+                                                    <small class="form-control-feedback">{{ $errors->first('videoTitle') }}</small>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group {{ $errors->has('videoLink') ? 'has-danger' : '' }}">
+                                                <label class="control-label">Link</label>
+                                                <input type="text" name="videoLink" class="form-control"
+                                                       value="{{ $settings->videoLink ?? '' }}">
+                                                @if ($errors->has('videoLink'))
+                                                    <small class="form-control-feedback">{{ $errors->first('videoLink') }}</small>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group {{ $errors->has('videoDescription') ? 'has-danger' : '' }}">
+                                                <label class="control-label">Description</label>
+                                                <input type="text" name="videoDescription" class="form-control"
+                                                       value="{{ $settings->videoDescription ?? '' }}">
+                                                @if ($errors->has('videoDescription'))
+                                                    <small class="form-control-feedback">{{ $errors->first('videoDescription') }}</small>
                                                 @endif
                                             </div>
                                         </div>

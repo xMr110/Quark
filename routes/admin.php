@@ -16,8 +16,8 @@ Route::resource('User','UserController');
 
 Route::resource('Slides','SliderController');
 
-Route::resource('Service','ServiceController');
 Route::resource('Industry','IndustryController');
+Route::resource('Literature','LiteratureController');
 Route::resource('Partner','PartnerController');
 Route::resource('Category','CategoryController');
 Route::resource('Product','ProductController');

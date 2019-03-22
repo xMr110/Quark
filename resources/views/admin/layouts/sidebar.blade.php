@@ -94,14 +94,13 @@
                         <i
                             class="mdi mdi-account"></i>
                         <span class="hide-menu">
-                        Services
+                        Literatures
                     </span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="{{action('Admin\ServiceController@index')}}">All</a></li>
-                        <li><a href="{{action('Admin\ServiceController@create')}}">New</a></li>
+                        <li><a href="{{action('Admin\LiteratureController@index')}}">All</a></li>
+                        <li><a href="{{action('Admin\LiteratureController@create')}}">New</a></li>
                     </ul>
                 </li>
-
                 <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                         <i
                                 class="mdi mdi-account"></i>
@@ -111,6 +110,13 @@
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{action('Admin\SettingController@about')}}">Manage</a></li>
                     </ul>
+                </li>
+                <li><a class="waves-effect waves-dark" href="/admin/translations" aria-expanded="false"><i
+                            class="mdi mdi-google-translate"></i>
+                        <span class="hide-menu">
+                        Website Words
+                    </span>
+                    </a>
                 </li>
             </ul>
         </nav>
