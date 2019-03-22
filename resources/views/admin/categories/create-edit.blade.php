@@ -58,7 +58,24 @@
                                         placeholder="Description ... ">{{ isset($category) ? isset($category->description) ? $category->description : old('description') ?? '' : old('description') ?? '' }}</textarea>
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                                <h3>
+                                    <span class="label label-info">3</span>
+                                    Industry *
+                                </h3>
+                            </div>
 
+                            <div class="col-md-12">
+                                <div  class="form-group">
+                                    <label for="industry_id">Industry *</label>
+                                    <select name="industry_id" id="" class="form-control">
+                                        <option value="">Industry</option>
+                                        @foreach($industries as $industry)
+                                            <option value="{{ $industry->id }}" {{ isset($category) ? $industry->id == $category->industry_id ? 'selected' : '' : '' }}>{{ $industry->title }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="image">

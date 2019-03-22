@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CategoryRequest extends FormRequest
+class LiteratureRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +26,7 @@ class CategoryRequest extends FormRequest
         return [
             'title'=>'required',
             'description'=>'required',
-            'industry_id'=>'required',
+            'attachment'=>'required',
         ];
     }
 }

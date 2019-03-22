@@ -64,6 +64,9 @@ class IndustryController extends Controller
     public function destroy($id)
     {
         $industry = Industry::findOrFail($id);
+        if (count($industry->categories)) {
+            return back()->with('error', 'Industry Connected To Categories You Can,t delete it fix that first');
+        }
         if (file_exists(storage_path('/storage/'.$industry->image_path)))
         {
             unlink(storage_path('/storage/'.$industry->image_path));

@@ -21,4 +21,5 @@ Route::resource('Industry','IndustryController');
 Route::resource('Partner','PartnerController');
 Route::resource('Category','CategoryController');
 Route::resource('Product','ProductController');
+Route::resource('Literature','LiteratureController');
 

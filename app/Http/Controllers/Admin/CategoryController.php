@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
+use App\Models\Industry;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,12 +17,14 @@ class CategoryController extends Controller
     }
     public function create()
     {
-        return view('admin.categories.create-edit');
+        $industries = Industry::all();
+        return view('admin.categories.create-edit',compact('industries'));
     }
     public function edit($id)
     {
+        $industries = Industry::all();
         $category = Category::findOrFail($id);
-        return view('admin.categories.create-edit',compact('category'));
+        return view('admin.categories.create-edit',compact('category','industries'));
     }
     public function store(CategoryRequest $request)
     {
@@ -31,6 +34,7 @@ class CategoryController extends Controller
         {
             $category->image_path = $request->file('image_path')->store('categories','public');
         }
+        $category->industry_id = $request->get('industry_id');
         $category->title = $request->get('title');
         $category->description = $request->get('description');
         $category->save();
@@ -51,6 +55,7 @@ class CategoryController extends Controller
                 $category->image_path = $request->file('image_path')->store('categories','public');
             }
         }
+        $category->industry_id = $request->get('industry_id');
         $category->title = $request->get('title');
         $category->description = $request->get('description');
         $category->save();
