@@ -22,8 +22,8 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->text('techInfo');
-            $table->string('video_path');
-            $table->string('pdf_path');
+            $table->string('video_path')->nullable();
+            $table->string('pdf_path')->nullable();
             $table->timestamps();
         });
     }

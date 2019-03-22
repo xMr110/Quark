@@ -61,11 +61,13 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $category = Category::findOrFail($id);
+        if (count($category->products)) {
+            return back()->with('error', 'Category Connected To Products You Can,t delete it fix that first');
+        }
         if (file_exists(storage_path('/storage/'.$category->image_path)))
         {
             unlink(storage_path('/storage/'.$category->image_path));
         }
-
         $category->delete();
         return redirect(action('Admin\CategoryController@index'))->with('success','Category Deleted..');
     }

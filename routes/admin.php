@@ -18,5 +18,7 @@ Route::resource('Slides','SliderController');
 
 Route::resource('Service','ServiceController');
 Route::resource('Industry','IndustryController');
+Route::resource('Partner','PartnerController');
 Route::resource('Category','CategoryController');
+Route::resource('Product','ProductController');
 

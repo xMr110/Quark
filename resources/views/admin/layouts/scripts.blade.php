@@ -61,7 +61,7 @@
                 if (willDelete) {
                     $(this).parent().find('> #delete').submit();
                 } else {
-
+                    console.log('nothing');
                 }
             });
 

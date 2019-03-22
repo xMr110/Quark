@@ -31,11 +31,11 @@ class PartnerController extends Controller
         {
             $partner->image_path=$request->file('image_path')->store('Partners','public');
         }
-        $partner->title = $request->name;
+        $partner->title = $request->title;
         $partner->description = $request->description;
         $partner->link = $request->link;
         $partner->save();
-        return redirect(action('Admin\PartnersController@index'))->with('success','Partner Added');
+        return redirect(action('Admin\PartnerController@index'))->with('success','Partner Added');
     }
     public function update(PartnerRequest $request,$id)
     {
@@ -55,21 +55,20 @@ class PartnerController extends Controller
         if ($request->get('link'))
             $updatePartner->link = $request->get('link');
         $updatePartner->save();
-        return redirect(action('Admin\PartnersController@index'))->with('success','Partner Updated');
+        return redirect(action('Admin\PartnerController@index'))->with('success','Partner Updated');
 
 
     }
     public function destroy($id)
     {
         $partner = Partner::findOrFail($id);
-        if ($partner->products->count() > 0) {
-            return back()->with('Danger', 'Partner Connected To Products You Can,t delete it fix that first');
-        } else if ($partner->products->count() == 0) {
+        if (count($partner->products)) {
+            return back()->with('error', 'Partner Connected To Products You Can,t delete it fix that first');
+        }
             if (file_exists(storage_path('app/public' . $partner->image_path))) {
                 unlink(storage_path('app/public/' . $partner->image_path));
             }
             $partner->delete();
-            return redirect(action('Admin\PartnersController@index'))->with('success', 'تم الحذف  بنجاح!');
-        }
+        return redirect(action('Admin\PartnerController@index'))->with('success', 'Partner Removed!');
     }
 }

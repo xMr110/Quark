@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\ProductRequest;
+use App\Models\Category;
+use App\Models\Partner;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,12 +18,16 @@ class ProductController extends Controller
     }
     public function create()
     {
-        return view('admin.products.create-edit');
+        $partners =Partner::all();
+        $categories =Category::all();
+        return view('admin.products.create-edit',compact('partners','categories'));
     }
     public function edit($id)
     {
+        $partners =Partner::all();
+        $categories =Category::all();
         $product = Product::findOrFail($id);
-        return view('admin.products.create-edit',compact('product'));
+        return view('admin.products.create-edit',compact('product','partners','categories'));
     }
     public function store(ProductRequest $request)
     {

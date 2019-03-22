@@ -27,6 +27,8 @@ class ProductRequest extends FormRequest
             'title'=>'required',
             'description'=>'required',
             'techInfo'=>'required',
+            'category_id'=>'required',
+
         ];
     }
 }

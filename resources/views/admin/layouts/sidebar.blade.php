@@ -72,6 +72,28 @@
                         <i
                             class="mdi mdi-account"></i>
                         <span class="hide-menu">
+                        Partners
+                    </span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{action('Admin\PartnerController@index')}}">All</a></li>
+                        <li><a href="{{action('Admin\PartnerController@create')}}">New</a></li>
+                    </ul>
+                </li>
+                <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                        <i
+                            class="mdi mdi-account"></i>
+                        <span class="hide-menu">
+                        Products
+                    </span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{action('Admin\ProductController@index')}}">All</a></li>
+                        <li><a href="{{action('Admin\ProductController@create')}}">New</a></li>
+                    </ul>
+                </li>
+                <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                        <i
+                            class="mdi mdi-account"></i>
+                        <span class="hide-menu">
                         Services
                     </span></a>
                     <ul aria-expanded="false" class="collapse">
