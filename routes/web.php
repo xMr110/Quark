@@ -15,7 +15,7 @@ Auth::routes();
 Route::get('/', 'SiteController@index');
 Route::get('/about', 'SiteController@about');
 Route::get('/contact', 'SiteController@contact');
-
+Route::post('/Message/Send','SiteController@message');
 // Admin Area
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
     require_once base_path('routes/admin.php');

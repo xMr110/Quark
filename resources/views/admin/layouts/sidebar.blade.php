@@ -111,6 +111,16 @@
                         <li><a href="{{action('Admin\SettingController@about')}}">Manage</a></li>
                     </ul>
                 </li>
+                <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                        <i
+                            class="mdi mdi-account"></i>
+                        <span class="hide-menu">
+                        Messages
+                    </span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{action('Admin\MessageController@index')}}">All</a></li>
+                    </ul>
+                </li>
                 <li><a class="waves-effect waves-dark" href="/admin/translations" aria-expanded="false"><i
                             class="mdi mdi-google-translate"></i>
                         <span class="hide-menu">

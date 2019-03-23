@@ -215,13 +215,22 @@
                     <div class="section-heading">
                         <h6 class="semi-bold">Write us a message</h6>
                     </div>
-                    <form class="contact-form-2 mt-15" method="post">
+                    @include('layouts.alerts')
+                    <form class="contact-form-2 mt-15" method="post" action="{{action('SiteController@message')}}" enctype="multipart/form-data">
+
+                        {{csrf_field()}}
                         <div class="row">
                             <div class="col-sm-6 col-12">
                                 <input type="text" name="name" placeholder="First Name*">
                             </div>
                             <div class="col-sm-6 col-12">
+                                <input type="text" name="phone" placeholder="Phone*">
+                            </div>
+                            <div class="col-sm-6 col-12">
                                 <input type="text" name="title" placeholder="Title*">
+                            </div>
+                            <div class="col-sm-6 col-12">
+                                <input type="email" name="email" placeholder="Email*">
                             </div>
                             <div class="col-12">
                                 <textarea name="message" placeholder="Your Message*"></textarea>
