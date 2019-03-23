@@ -24,6 +24,7 @@ Route::get('/Industry/{industry}/information','SiteController@SingleIndustry');
 
 Route::get('/Category/{category}/products','SiteController@SingleCategory');
 Route::get('/Products','SiteController@Products');
+Route::get('/Product/{product}/information','SiteController@Product');
 
 // Admin Area
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {

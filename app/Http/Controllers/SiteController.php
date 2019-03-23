@@ -55,6 +55,11 @@ class SiteController extends Controller
 
         return view('products',compact('products'));
     }
+    public function product($id)
+    {
+        $product = Product::findOrFail($id);
+        return view('single',compact('product'));
+    }
     public function Message(Request $request)
     {
         $this->validate($request, [
