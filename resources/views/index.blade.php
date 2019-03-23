@@ -110,12 +110,12 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <div class="service-box-2">
                         <div class="service-box-2-icon">
-                            <a href="#"> <i class="fas fa-arrow-right"></i> </a>
+                            <a href="{{action('SiteController@SingleIndustry',$industry)}}"> <i class="fas fa-arrow-right"></i> </a>
                         </div>
                         <img src="{{url('/storage/'.$industry->image_path)}}" alt="img">
                         <div class="service-box-2-overlay">
                             <div class="service-box-2-text">
-                                <h6><a href="#">{{$industry->title}}</a></h6>
+                                <h6><a href="{{action('SiteController@SingleIndustry',$industry)}}">{{$industry->title}}</a></h6>
                                 <h4>{!! str_limit($industry->description,20) !!}</h4>
                             </div>
                         </div>
