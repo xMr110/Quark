@@ -7,6 +7,7 @@ use App\Models\Industry;
 use App\Models\Literature;
 use App\Models\Message;
 use App\Models\Partner;
+use App\Models\Product;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -38,17 +39,21 @@ class SiteController extends Controller
         $literatures = Literature::latest()->take(3)->get();
         $industry = Industry::findOrFail($id);
         $categories = Category::all()->where('industry_id',$id);
-        $partners = Partner::all()->take(0);
-        foreach ($industry->categories as $category) {
-            foreach ($category->products as $product)
-            {
-                $partner = Partner::all()->where('id',$product->partner_id);
-                    $partners->push();
-            }
-        }
-        //TODO
+
+//        //TODO
         $industries =Industry::all();
-        return view('SingleIndustry',compact('industries','industry','categories','literatures','partners'));
+        return view('SingleIndustry',compact('industries','industry','categories','literatures'));
+    }
+    public function SingleCategory($id)
+    {
+        $category = Category::findOrFail($id);
+        return view('SingleCategory',compact('category'));
+    }
+    public function Products()
+    {
+        $products = Product::all();
+
+        return view('products',compact('products'));
     }
     public function Message(Request $request)
     {

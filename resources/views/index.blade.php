@@ -11,40 +11,41 @@
     <!-- Preloader End -->
 
     <!-- Start revolution slider -->
-    <div class="rev_slider_wrapper fs-slider-wrap bg-arrows">
-        <div id="rev_slider" class="rev_slider fullscreenbanner">
-            <ul>
-                <!-- Slides -->
-                @foreach($slides as $slide)
-                <li  data-delay="5000" data-transition="parallaxtotop" data-slotamount="7" data-masterspeed="2500" data-fsmasterspeed="1000">
+    <div class="rev_slider_wrapper bg-arrows">
+    <div id="rev_slider" class="rev_slider fullscreenbanner">
+        <ul>
 
-                    <!-- Main image-->
-                    <img src="{{url('/storage/'.$slide->image_path)}}"  alt="" data-bgposition="right center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
+        <!-- Slides -->
+                @foreach($slides as $slide)
+                <li data-delay="5000" data-transition="slotzoom-horizontal" data-slotamount="7" data-masterspeed="1000" data-fsmasterspeed="1000">
+
+                <!-- Main image-->
+                    <img src="{{url('/storage/'.$slide->image_path)}}"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
 
                     <!-- Layer 1 -->
-                    <div class="slide-title tp-caption tp-resizeme text-left text-center-sm"
+                    <div class="slide-title tp-caption tp-resizeme text-left white-color"
                          data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']"
                          data-y="['middle','middle','middle','middle']" data-voffset="['-20','-20', '-150', '-350']"
-                         data-fontsize="['70','60', '60', '125']"
+                         data-fontsize="['70','70', '70', '125']"
                          data-fontweight="600"
-                         data-lineheight="['80','70', '70', '135']"
+                         data-lineheight="['85','85', '80', '135']"
                          data-width="['700','700','650']"
                          data-height="none"
-                         data-color="#fff"
                          data-whitespace="normal"
                          data-transform_idle="o:1;"
                          data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power2.easeInOut;"
                          data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
                          data-mask_in="x:50px;y:0px;s:inherit;e:inherit;"
                          data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                         data-frames='[{"delay":0,"split":"chars","splitdelay":0.05,"speed":2000,"frame":"0","from":"y:[100%];z:0;rZ:-35deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                          data-start="500"
+                         data-splitin="chars"
+                         data-splitout="none"
                          data-responsive_offset="on"
                          data-elementdelay="0.05">{{$slide->title}}
                     </div>
 
                     <!-- Layer 2 -->
-                    <div class="slide-subtitle tp-caption tp-resizeme text-left text-center-sm"
+                    <div class="slide-subtitle tp-caption tp-resizeme text-left white-color "
                          data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']"
                          data-y="['middle','middle','middle','middle']" data-voffset="['90','90', '15', '15']"
                          data-fontsize="['18', '18', '18', '18']"
@@ -57,7 +58,6 @@
                          data-transform_out="opacity:0;s:1000;s:1000;"
                          data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                          data-start="1500"
-                         data-color="#fff"
                          data-splitin="none"
                          data-splitout="none">{{$slide->description}}
                     </div>

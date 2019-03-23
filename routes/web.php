@@ -19,6 +19,12 @@ Route::post('/Message/Send','SiteController@message');
 
 Route::get('/Industries','SiteController@industries');
 Route::get('/Industry/{industry}/information','SiteController@SingleIndustry');
+
+
+
+Route::get('/Category/{category}/products','SiteController@SingleCategory');
+Route::get('/Products','SiteController@Products');
+
 // Admin Area
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
     require_once base_path('routes/admin.php');
