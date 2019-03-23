@@ -31,8 +31,10 @@
                                 </h5>
                             </div>
                             <div id="collapse{{$category->id}}" class="collapse" role="tabpanel" aria-labelledby="heading{{$category->id}}" data-parent="#accordion">
+                                <div class="card-body p-2 card-body-primary"><a href="{{action('SiteController@SingleCategory',$category)}}">Go To {{$category->title}} Page</a></div>
+                                <div class="dropdown-divider"></div>
                                 @foreach($category->products as $product)
-                                    <div class="card-body p-2 card-body-primary">{{$product->title}}</div>
+                                    <div class="card-body p-2 card-body-primary"><a href="{{action('SiteController@Product',$product)}}">{{$product->title}}</a></div>
                                     <div class="dropdown-divider"></div>
                                 @endforeach
                             </div>
