@@ -178,7 +178,7 @@
                         <div class="service-block-content">
                             <h4>{{$literature->title}}</h4>
                             <p>{{str_limit(strip_tags($literature->description),20)}}</p>
-                            <a href="#" class="service-block-content-button"><i class="fas fa-arrow-right"></i></a>
+                            <a href="{{action()}}" class="service-block-content-button"><i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

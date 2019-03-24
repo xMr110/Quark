@@ -19,47 +19,72 @@ class SiteController extends Controller
         $industries = Industry::all();
         $slides = Slider::all();
         $literatures = Literature::all();
-        return view('index',compact('slides','industries','literatures'));
+        return view('index', compact('slides', 'industries', 'literatures'));
     }
+
     public function about()
     {
         return view('about');
     }
+
     public function contact()
     {
         return view('contactus');
     }
+
     public function industries()
     {
         $industries = Industry::all();
-        return view('Industries',compact('industries'));
+        return view('Industries', compact('industries'));
     }
+
     public function SingleIndustry($id)
     {
         $literatures = Literature::latest()->take(3)->get();
         $industry = Industry::findOrFail($id);
-        $categories = Category::all()->where('industry_id',$id);
+        $categories = Category::all()->where('industry_id', $id);
 
 //        //TODO
-        $industries =Industry::all();
-        return view('SingleIndustry',compact('industries','industry','categories','literatures'));
+        $industries = Industry::all();
+        return view('SingleIndustry', compact('industries', 'industry', 'categories', 'literatures'));
     }
+
     public function SingleCategory($id)
     {
         $category = Category::findOrFail($id);
-        return view('SingleCategory',compact('category'));
+        return view('SingleCategory', compact('category'));
     }
+
     public function Products()
     {
         $products = Product::all();
 
-        return view('products',compact('products'));
+        return view('products', compact('products'));
     }
+
     public function product($id)
     {
         $product = Product::findOrFail($id);
-        return view('single',compact('product'));
+        return view('single', compact('product'));
     }
+
+    public function literatures()
+    {
+        $literatures = Literature::all();
+        return view('Literatures', compact('literatures'));
+    }
+
+    public function partner($id)
+    {
+        $partner = Partner::findOrFail($id);
+        return view('SinglePartner',compact('partner'));
+    }
+    public function partners()
+    {
+        $partners = Partner::all();
+        return view('Partners',compact('partners'));
+    }
+
     public function Message(Request $request)
     {
         $this->validate($request, [

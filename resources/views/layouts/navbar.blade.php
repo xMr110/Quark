@@ -15,10 +15,10 @@
             <ul class="nav-menu align-to-right">
                 <li><a href="/">@lang('navbar.home')</a></li>
                 <li><a href="/about">@lang('navbar.about')</a></li>
-                <li><a href="/Industries">@lang('navbar.industries')</a></li>
-                <li><a href="/Products">@lang('navbar.products')</a></li>
-                <li><a href="/">@lang('navbar.globalPartners')</a></li>
-                <li><a href="/">@lang('navbar.literature')</a></li>
+                <li><a href="/industries">@lang('navbar.industries')</a></li>
+                <li><a href="/products">@lang('navbar.products')</a></li>
+                <li><a href="/partners">@lang('navbar.globalPartners')</a></li>
+                <li><a href="/literatures">@lang('navbar.literature')</a></li>
                 <li><a href="/contact">@lang('navbar.contactUs')</a></li>
 
             </ul>
