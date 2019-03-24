@@ -36,7 +36,7 @@
                 <li class="nav-small-cap">Content Management</li>
                 <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                         <i
-                                class="mdi mdi-account"></i>
+                                class="mdi mdi-image-filter"></i>
                         <span class="hide-menu">
                         Slider
                     </span></a>
@@ -45,10 +45,19 @@
                         <li><a href="{{action('Admin\SliderController@create')}}">New</a></li>
                     </ul>
                 </li>
-
                 <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                         <i
-                                class="mdi mdi-account"></i>
+                            class="mdi mdi-information-variant"></i>
+                        <span class="hide-menu">
+                        About Us
+                    </span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{action('Admin\SettingController@about')}}">Manage</a></li>
+                    </ul>
+                </li>
+                <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                        <i
+                                class="mdi mdi-wrench"></i>
                         <span class="hide-menu">
                         Industries
                     </span></a>
@@ -59,7 +68,7 @@
                 </li>
                 <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                         <i
-                            class="mdi mdi-account"></i>
+                            class="mdi mdi-format-list-bulleted"></i>
                         <span class="hide-menu">
                         Categories
                     </span></a>
@@ -70,7 +79,7 @@
                 </li>
                 <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                         <i
-                            class="mdi mdi-account"></i>
+                            class="mdi mdi-account-multiple"></i>
                         <span class="hide-menu">
                         Partners
                     </span></a>
@@ -81,7 +90,7 @@
                 </li>
                 <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                         <i
-                            class="mdi mdi-account"></i>
+                            class="mdi mdi-wallet-giftcard"></i>
                         <span class="hide-menu">
                         Products
                     </span></a>
@@ -92,7 +101,7 @@
                 </li>
                 <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                         <i
-                            class="mdi mdi-account"></i>
+                            class="mdi mdi-newspaper"></i>
                         <span class="hide-menu">
                         Literatures
                     </span></a>
@@ -103,17 +112,7 @@
                 </li>
                 <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                         <i
-                                class="mdi mdi-account"></i>
-                        <span class="hide-menu">
-                        About Us
-                    </span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="{{action('Admin\SettingController@about')}}">Manage</a></li>
-                    </ul>
-                </li>
-                <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
-                        <i
-                            class="mdi mdi-account"></i>
+                            class="mdi mdi-message-bulleted"></i>
                         <span class="hide-menu">
                         Messages
                     </span></a>

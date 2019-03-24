@@ -20,7 +20,7 @@
     <div class="section-block">
         <div class="container">
             <div class="section-heading text-left">
-                <h4 class="semi-bold">Literatures</h4>
+                <h4 class="semi-bold">@lang('homepage.LiteraturesTitle')</h4>
                 <div class="section-heading-line line-thin"></div>
             </div>
             <!-- Accordions Start -->

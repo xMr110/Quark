@@ -171,16 +171,35 @@
                 <p>@lang('homepage.LiteraturesDescription')</p>
             </div>
             <div class="row mt-50">
-                @foreach($literatures as $literature)
+                @foreach($literatures as $key=>$literature)
                 <div class="col-md-3 col-sm-12 col-12">
                     <div class="service-block">
                         <img src="{{url('/storage/'.$literature->image_path)}}" alt="img">
                         <div class="service-block-content">
                             <h4>{{$literature->title}}</h4>
                             <p>{{str_limit(strip_tags($literature->description),20)}}</p>
-                            <a href="{{action()}}" class="service-block-content-button"><i class="fas fa-arrow-right"></i></a>
+                            <a href="" data-izimodal-open="#modal{{$key}}" class="service-block-content-button"><i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
+                    <!-- Modal Start -->
+                    <div class="izimodal" id="modal{{$key}}" data-iziModal-width="600px" data-iziModal-fullscreen="true" data-iziModal-transitionIn="fadeIn" data-iziModal-transitionOut="fadeOut">
+                        <!-- Close Button Start -->
+                        <div class="close-modal">
+                            <button class="close-modal" data-izimodal-close><i class="ti-close"></i></button>
+                        </div>
+                        <!-- Close Button Start -->
+                        <!-- Modal Body Start -->
+                        <div class="modal-inside inner-30 center-holder">
+                            <div class="modal-heading">
+                                <h4>{{$literature->title}}</h4>
+                            </div>
+                            <p>{!! $literature->description !!}</p>
+                            <a class="button-md button-dark m-5" href="{{'/storage/'.$literature->attachment}}">Download</a>
+
+                        </div>
+                        <!-- Modal Body End -->
+                    </div>
+                    <!-- Modal End -->
                 </div>
                 @endforeach
             </div>
@@ -247,6 +266,9 @@
         </div>
     </div>
     <!--Contact END-->
+
+
+
 
 
 

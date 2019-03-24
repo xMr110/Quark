@@ -81,7 +81,7 @@
                                     <label for="image">
                                         <h3>
                                             <span class="label label-info">3</span>
-                                            Image {{ isset($category) ? '' : '*' }} (1200*1000)
+                                            Image {{ isset($category) ? '' : '*' }} (750*460)
                                         </h3>
                                     </label>
                                     <input type="file" name="image_path" class="form-control form-control-line">

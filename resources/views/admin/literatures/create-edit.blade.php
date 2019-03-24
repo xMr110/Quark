@@ -103,7 +103,7 @@
                                     <label for="image">
                                         <h3>
                                             <span class="label label-info">5</span>
-                                            Image {{ isset($literature) ? '' : '*' }}
+                                            Image {{ isset($literature) ? '' : '*' }} (400 * 260)
                                         </h3>
                                     </label>
                                     <input type="file" name="image_path" class="form-control form-control-line">

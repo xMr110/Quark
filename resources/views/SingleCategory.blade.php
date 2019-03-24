@@ -26,7 +26,7 @@
         <div class="background-shape bs-right"></div>
         <div class="container">
             <div class="section-heading text-center">
-                <h3 class="semi-bold font-size-35">Market your business to own your market</h3>
+                <h3 class="semi-bold font-size-35">@lang('homepage.categoryTitle')</h3>
                 <div class="section-heading-line line-thin"></div>
             </div>
             <div class="row mt-40">

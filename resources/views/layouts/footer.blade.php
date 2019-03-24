@@ -35,11 +35,33 @@
                 <div class="col-md-3 col-sm-6 col-12">
                     <h2>Recent Literatures</h2>
                     <ul class="footer-news mt-25">
-                        @foreach($footerLits as $footerLit)
+                        @foreach($footerLits as $key=>$footerLit)
                         <li>
-                            <a href="#">{{$footerLit->title}}</a>
+                            <a data-izimodal-open="#modal{{$key}}"  href="">{{$footerLit->title}}</a>
                             <strong><i class="fa fa-calendar"></i> {{$footerLit->created_at}}</strong>
                         </li>
+
+                            <!-- Modal Start -->
+                            <div class="izimodal" id="modal{{$key}}" data-iziModal-width="600px" data-iziModal-fullscreen="true" data-iziModal-transitionIn="fadeIn" data-iziModal-transitionOut="fadeOut">
+                                <!-- Close Button Start -->
+                                <div class="close-modal">
+                                    <button class="close-modal" data-izimodal-close><i class="ti-close"></i></button>
+                                </div>
+                                <!-- Close Button Start -->
+                                <!-- Modal Body Start -->
+                                <div class="modal-inside inner-30 center-holder">
+                                    <div  class="modal-heading">
+                                        <h4>{{$footerLit->title}}</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>{!! $footerLit->description !!}</p>
+                                    </div>
+                                    <a class="button-md button-dark m-5" href="{{'/storage/'.$footerLit->attachment}}">Download</a>
+
+                                </div>
+                                <!-- Modal Body End -->
+                            </div>
+                            <!-- Modal End -->
                             @endforeach
                     </ul>
                 </div>

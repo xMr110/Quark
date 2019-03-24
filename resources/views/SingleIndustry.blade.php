@@ -19,7 +19,7 @@
     <!-- 4 Columns Carousel Section Section START -->
     <div class="section-block-grey">
         <div class="container">
-            <div class="semi-bold font-size-20 text-center mb-5">Industry Category</div>
+            <div class="semi-bold font-size-20 text-center mb-5">@lang('homepage.SingleIndustry')</div>
             <div class="row" id="accordion" role="tablist" >
                     @foreach($categories as $category)
                         <div class="col-md-3 card card-primary" style="  border: 0!important; ">
