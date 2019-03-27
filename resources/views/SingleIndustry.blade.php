@@ -22,7 +22,7 @@
             <div class="semi-bold font-size-20 text-center mb-5">@lang('homepage.SingleIndustry')</div>
             <div class="row" id="accordion" role="tablist" >
                     @foreach($categories as $category)
-                        <div class="col-md-3 card card-primary" style="  border: 0!important; ">
+                        <div class="col-md-3 mt-2 card card-primary" style="  border: 0!important; ">
                             <div style="padding: 15px!important; border-radius: 10px;   border: 1px solid rgba(0,0,0,.125)!important;" class="card-header card-header-primary" role="tab" id="headingOne">
                                 <h5 class="mb-0">
                                     <a class="collapsed" data-toggle="collapse" href="#collapse{{$category->id}}" aria-expanded="true" aria-controls="collapseOne">
