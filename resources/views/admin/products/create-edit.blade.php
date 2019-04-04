@@ -223,12 +223,18 @@
     <script src="/assets/backend/js/dropdown.min.js"></script>
         <script>
             $('#dropdown').dropdown({on:'click',direction:'downward'});
+
             $(document).ready(function(){
+
+
                 $('#dropdown').change(function(e){
                     var values = $('#dropdown').val();
                     $('#categories').val(values);
 
                 });
+                var values = $('#dropdown').val();
+                $('#categories').val(values);
+
 
 
             });

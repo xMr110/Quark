@@ -30,17 +30,36 @@
                 <h3 class="semi-bold font-size-35">@lang('homepage.productsTitle')</h3>
                 <div class="section-heading-line line-thin"></div>
             </div>
-            <div class="row mt-40">
-                <style>
-                    @media (min-width: 768px) {
-                        .col-md-4 {
-                            -webkit-box-flex: 0;
-                            -ms-flex: 0 0 33.333333%;
-                            flex: 0 0 33.333333%;
-                            max-width: 30.333333%;
-                        }
+            <div class="row mt-5 mb-5" style="display: block">
+                <div class="form-group" style="display: inline-block;">
+                    <select  name="industry" id="industry" class="form-control input-lg dynamic" >
+                        <option value="">Select Industry</option>
+                        @foreach($industries as $industry)
+                            <option value="{{ $industry->id}}">{{ $industry->title }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group" style="display: inline-block;">
+                    <select name="category" id="category" class="form-control input-lg dynamic">
+                        <option value="">Select category</option>
+                    </select>
+                </div>
+                {{csrf_field()}}
+            </div>
+            <style>
+                @media (min-width: 768px) {
+                    .col-md-4 {
+                        -webkit-box-flex: 0;
+                        -ms-flex: 0 0 33.333333%;
+                        flex: 0 0 33.333333%;
+                        max-width: 30.333333%;
                     }
-                </style>
+                }
+            </style>
+
+            <div id="myproducts" class="row mt-40">
+
+
                 @foreach($products as $product)
                     <div class="p-0  col-md-4 col-xs-12 col-sm-12 service-block-2 mr-2 ml-2">
                         <img  src="{{url('/storage/'.$product->image_path)}}" alt="img">
@@ -57,3 +76,55 @@
 
 
 @endsection
+
+
+@section('script')
+    <script>
+        $('#industry').change(function(){
+            var industryID = $(this).val();
+            if(industryID){
+                $.ajax({
+                    type:"GET",
+                    url:"{{url('get-category-list')}}?industry_id="+industryID,
+                    success:function(res){
+                        if(res){
+                            $("#category").empty();
+                            $("#category").append('<option value="">Select category</option>');
+                            $.each(res,function(key,value){
+                                $("#category").append('<option value="'+key+'">'+value+'</option>');
+                            });
+
+                        }else{
+                            $("#category").empty();
+                            $("#category").append('<option value="">Select category</option>');
+                        }
+                    }
+                });
+            }else{
+                $("#category").empty();
+                $("#category").append('<option value="">Select category</option>');
+            }
+        });
+        $('#category').on('change',function(){
+            var categoryID = $(this).val();
+            if(categoryID){
+                $.ajax({
+                    type:"GET",
+                    url:"{{url('get-product-list')}}?category_id="+categoryID,
+                    success:function(res){
+                        if(res){
+                            $("#myproducts").empty();
+                            $("#myproducts").html(res);
+                        }else{
+                            $("#myproducts").empty();
+                            $("#myproducts").append('<h3>Sorry we did,t find a Match..!!</h3>');
+                        }
+                    }
+                });
+            }else{
+                $("#myproducts").append('<h3>Sorry we did,t find a Match..!!</h3>');
+            }
+
+        });
+    </script>
+    @endsection

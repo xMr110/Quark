@@ -115,7 +115,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        if ($request->get('categories')) {
+        if ($request->get('category_id')) {
             $categories = explode(',',$request->category_id);
             $attached = array();
             foreach ($categories as $category)

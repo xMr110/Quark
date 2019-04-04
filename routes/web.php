@@ -21,6 +21,9 @@ Route::get('/industries','SiteController@industries');
 Route::get('/industry/{industry}/information','SiteController@SingleIndustry');
 Route::get('/literatures','SiteController@Literatures');
 
+Route::get('get-category-list','SiteController@getCategories');
+Route::get('get-product-list','SiteController@getProducts');
+
 
 Route::get('/category/{category}/products','SiteController@SingleCategory');
 Route::get('/products','SiteController@Products');

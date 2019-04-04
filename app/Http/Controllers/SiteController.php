@@ -57,9 +57,32 @@ class SiteController extends Controller
 
     public function Products()
     {
+        $industries = Industry::all();
+        $categories = Category::all();
         $products = Product::all();
+        return view('products', compact('products','categories','industries'));
+    }
+    public function getCategories(Request $request)
+    {
+        $categoreis = Category::all()->where('industry_id', $request->industry_id)->pluck('title','id');
 
-        return view('products', compact('products'));
+        return response()->json($categoreis);
+    }
+    public function getProducts(Request $request)
+    {
+        $category = Category::findOrFail($request);
+        $html = '';
+        $category = $category->first();
+        foreach ($category->products as $product) {
+            $html = $html.'<div class="p-0  col-md-4 col-xs-12 col-sm-12 service-block-2 mr-2 ml-2">
+                        <img  src="'.url('/storage/'.$product->image_path).'" alt="img">
+                        <div class="service-block-2-content">
+                            <h4><a href="'.action('SiteController@Product',$product).'">'.$product->title.'</a></h4>
+                            <a href="'.action('SiteController@Product',$product).'" class="service-block-2-btn">Read more <i class="fa fa-arrow-right primary-color"></i></a>
+                        </div>
+                    </div>';
+        }
+        return $html;
     }
 
     public function product($id)
