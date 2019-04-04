@@ -54,9 +54,18 @@ class ProductController extends Controller
         {
             $product->video_path=$request->get('video_path');
         }
-        $product->category_id = $request->get('category_id');
-
         $product->save();
+        $categories = explode(',',$request->category_id);
+        $attached = array();
+        foreach ($categories as $category)
+        {
+            if ($selectedCategory = Category::find($category))
+            {
+                array_push($attached,$selectedCategory->id);
+            }
+        }
+        $product->categories()->sync($attached);
+
 
         return redirect(action('Admin\ProductController@index'))->with('success','Product Added');
 
@@ -102,9 +111,24 @@ class ProductController extends Controller
         {
             $product->video_path=$request->get('video_path');
         }
-        $product->category_id = $request->get('category_id');
+
 
         $product->save();
+
+        if ($request->get('categories')) {
+            $categories = explode(',',$request->category_id);
+            $attached = array();
+            foreach ($categories as $category)
+            {
+                if ($selectedCategory = Category::find($category))
+                {
+                    array_push($attached,$selectedCategory->id);
+                }
+            }
+            $product->categories()->sync($attached);
+
+        }
+
 
         return redirect(action('Admin\ProductController@index'))->with('success','Product Updated');
     }
@@ -119,6 +143,7 @@ class ProductController extends Controller
         {
             unlink(storage_path('/storage/'.$product->pdf_path));
         }
+        $product->categories()->delete();
 
         $product->delete();
 

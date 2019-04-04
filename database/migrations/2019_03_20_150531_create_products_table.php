@@ -18,7 +18,6 @@ class CreateProductsTable extends Migration
             $table->string('image_path');
             $table->string('company')->nullable();
             $table->integer('partner_id')->nullable();
-            $table->integer('category_id');
             $table->string('title');
             $table->text('description');
             $table->text('techInfo');

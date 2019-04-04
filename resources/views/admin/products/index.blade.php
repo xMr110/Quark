@@ -28,7 +28,6 @@
                                             <th>#</th>
                                             <th>title</th>
                                             <th>description</th>
-                                            <th>Category</th>
                                             <th>Producer</th>
                                             <th>Action</th>
                                         </tr>
@@ -39,7 +38,6 @@
                                                 <td>{{$product->id}}</td>
                                                 <td>{{$product->title}}</td>
                                                 <td>{!! str_limit(strip_tags($product->description),10)!!}</td>
-                                                <td>{{$product->category->title}}</td>
                                                 <td>{{($product->partner_id != null)?$product->partner->title:($product->company!=null?$product->company:'No Producer')}}</td>
                                                 <td>
                                                     <a href="{{action('Admin\ProductController@edit',$product)}}" data-toggle="tooltip"

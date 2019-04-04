@@ -10,6 +10,11 @@
     <li class="breadcrumb-item active">Create Product</li>
 @endsection
 
+@section('style')
+    <link href="/assets/backend/css/dropdown.css" rel="stylesheet">
+
+@endsection
+
 
 @section('content')
     <div class="row">
@@ -148,15 +153,15 @@
                             </div>
 
                             <div class="col-md-12">
-                                <div  class="form-group">
+                                <div  class="form-group" style="overflow:visible!important;">
                                     <label for="category_id">Category *</label>
-                                    <select name="category_id" id="" class="form-control">
-                                        <option value="">Category</option>
-                                        @foreach($categories as $category)
-                                            <option value="{{ $category->id }}" {{ isset($product) ? $category->id == $product->category_id ? 'selected' : '' : '' }}>{{ $category->title }}</option>
-                                        @endforeach
-                                        <option @if(count($categories)) style="display: none;" @endif value="" @if(!count($categories)) selected @endif @if(count($categories)) disabled @endif>No Categories Added</option>
-                                    </select>
+                                        <!-- This will receive comma separated value like OH,TX,WY !-->
+                                    <input type="hidden" name="category_id" id="categories">
+                                        <select  class="ui fluid selection dropdown" multiple="" id="dropdown">
+                                            @foreach($categories as $category)
+                                                <option  value="{{ $category->id }}" {{ isset($product) ? $category->id == $product->categories->contains($category->id) ? 'selected' : '' : '' }}>{{ $category->title }}</option>
+                                            @endforeach
+                                        </select>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -215,8 +220,21 @@
 
 
 @section('script')
+    <script src="/assets/backend/js/dropdown.min.js"></script>
+        <script>
+            $('#dropdown').dropdown({on:'click',direction:'downward'});
+            $(document).ready(function(){
+                $('#dropdown').change(function(e){
+                    var values = $('#dropdown').val();
+                    $('#categories').val(values);
 
-    <script>
+                });
+
+
+            });
+
+
+
         function showDiv(elem){
             if(elem.value == 1) {
                 document.getElementById('company').style.display = "block";
@@ -232,3 +250,5 @@
 
 
 @endsection
+
+
