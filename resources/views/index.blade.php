@@ -74,7 +74,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-12">
-                    <img src="{{isset($settings)?$settings->aboutImage !=''?url('/storage/'.$settings->aboutImage):'':''}}" class="rounded-border shadow-primary" alt="">
+                    <img src="{{isset($settings->aboutImage)?$settings->aboutImage !=''?url('/storage/'.$settings->aboutImage):'':''}}" class="rounded-border shadow-primary" alt="">
                 </div>
                 <div class="col-md-6 col-sm-6 col-12">
                     <div class="pl-30-md">

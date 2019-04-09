@@ -31,17 +31,21 @@
                 <div class="section-heading-line line-thin"></div>
             </div>
             <div class="row mt-5 mb-5" style="display: block">
-                <div class="form-group" style="display: inline-block;">
+                <div class="form-group mr-4" style="display: inline-block;">
+                    <h6 class="">Select Industry</h6>
                     <select  name="industry" id="industry" class="form-control input-lg dynamic" >
-                        <option value="">Select Industry</option>
+                        <option value="" selected>Industry</option>
+                        <option value="A1">All</option>
                         @foreach($industries as $industry)
                             <option value="{{ $industry->id}}">{{ $industry->title }}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="form-group" style="display: inline-block;">
-                    <select name="category" id="category" class="form-control input-lg dynamic">
-                        <option value="">Select category</option>
+                    <h6>Select Category</h6>
+                    <select name="category"   id="category" class="form-control input-lg dynamic ">
+                        <option value="" selected>Category</option>
+                        <option value="B1"  >All</option>
                     </select>
                 </div>
                 {{csrf_field()}}
@@ -89,28 +93,29 @@
                     success:function(res){
                         if(res){
                             $("#category").empty();
-                            $("#category").append('<option value="">Select category</option>');
+                            $("#category").append(' <option value="" selected>Category</option><option value="B1">All</option>');
                             $.each(res,function(key,value){
                                 $("#category").append('<option value="'+key+'">'+value+'</option>');
                             });
 
                         }else{
                             $("#category").empty();
-                            $("#category").append('<option value="">Select category</option>');
+                            $("#category").append(' <option value="" selected>Category</option><option value="B1">All</option>');
                         }
                     }
                 });
             }else{
                 $("#category").empty();
-                $("#category").append('<option value="">Select category</option>');
+                $("#category").append(' <option value="" selected>Category</option><option value="B1">All</option>');
             }
         });
         $('#category').on('change',function(){
             var categoryID = $(this).val();
+            var IndustrAll = $('#industry').val();
             if(categoryID){
                 $.ajax({
                     type:"GET",
-                    url:"{{url('get-product-list')}}?category_id="+categoryID,
+                    url:"{{url('get-product-list')}}?category_id="+categoryID+"&industry_id="+IndustrAll,
                     success:function(res){
                         if(res){
                             $("#myproducts").empty();

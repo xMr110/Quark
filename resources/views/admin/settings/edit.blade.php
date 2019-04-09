@@ -122,7 +122,7 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group {{ $errors->has('logo') ? 'has-danger' : '' }}">
-                                                <label class="control-label">Logo Icon</label>
+                                                <label class="control-label">Logo</label>
                                                 <input type="file" name="logo" class="form-control">
 
                                                 @if ($errors->has('logo'))
