@@ -135,7 +135,7 @@
             <div class="row">
                 <div class="col-md-10 col-sm-10 col-12">
                     <div class="large-heading text-left">
-                        <small class="semi-bold primary-color">{{isset($settings)?$settings->videoTitle!=''?$settings->videoTitle:'':''}}</small>
+                        <small class="semi-bold white-color">{{isset($settings)?$settings->videoTitle!=''?$settings->videoTitle:'':''}}</small>
                         <h4 class="semi-bold white-color">{{isset($settings)?$settings->videoDescription!=''?$settings->videoDescription:'':''}}</h4>
                     </div>
                 </div>
