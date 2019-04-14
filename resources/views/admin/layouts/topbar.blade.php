@@ -22,7 +22,7 @@
         <!-- Logo text --><span>
                          <!-- dark Logo text -->
             <!-- Light Logo text -->
-                         <img width="150px" height="30px" src="/assets/backend/images/logo-light-text.png" class="light-logo"
+                         <img width="170px" height="35px" src="/assets/backend/images/logo-light-text.png" class="light-logo"
                               alt="homepage"/>
                 </span> </a>
         </div>

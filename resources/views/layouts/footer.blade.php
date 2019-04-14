@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6 col-12">
-                    <a href="#"><img src="{{isset($settings)?$settings->logo!=''?url('/storage/'.$settings->logo):'':''}}" id="footer_logo" alt="logo"></a>
+                    <a href="#"><img style=" max-width: 60%!important;" src="{{isset($settings)?$settings->logo!=''?url('/storage/'.$settings->logo):'':''}}" id="footer_logo" alt="logo"></a>
                     <p class="mt-20">@lang('footer.description')</p>
                     <ul class="social-links-footer">
                         <li><a href="{{isset($settings)?$settings->facebook:''}}"><i class="fab fa-facebook"></i></a></li>
