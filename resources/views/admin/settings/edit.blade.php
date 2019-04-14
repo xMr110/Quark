@@ -192,6 +192,17 @@
                                                 @endif
                                             </div>
                                         </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group {{ $errors->has('linkedin') ? 'has-danger' : '' }}">
+                                                <label class="control-label">Linkedin</label>
+                                                <input type="text" name="linkedin" class="form-control"
+                                                       value="{{ $settings->linkedin ?? '' }}">
+                                                @if ($errors->has('linkedin'))
+                                                    <small class="form-control-feedback">{{ $errors->first('linkedin') }}</small>
+                                                @endif
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 

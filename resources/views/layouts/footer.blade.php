@@ -8,9 +8,10 @@
                     <a href="#"><img style=" max-width: 60%!important;" src="{{isset($settings)?$settings->logo!=''?url('/storage/'.$settings->logo):'':''}}" id="footer_logo" alt="logo"></a>
                     <p class="mt-20">@lang('footer.description')</p>
                     <ul class="social-links-footer">
-                        <li><a href="{{isset($settings)?$settings->facebook:''}}"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="{{isset($settings)?$settings->twitter:''}}"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="{{isset($settings)?$settings->instagram:''}}"><i class="fab fa-instagram"></i></a></li>
+                          @if(isset($settings->facebook)&&$settings->facebook!='') <li><a href="{{isset($settings)?$settings->facebook:''}}"><i class="fab fa-facebook"></i></a></li>@endif
+                           @if(isset($settings->twitter)&&$settings->twitter!='') <li><a href="{{isset($settings)?$settings->twitter:''}}"><i class="fab fa-twitter"></i></a></li>@endif
+                           @if(isset($settings->instagram)&&$settings->instagram!='') <li><a href="{{isset($settings)?$settings->instagram:''}}"><i class="fab fa-instagram"></i></a></li>@endif
+                           @if(isset($settings->linkedin)&&$settings->linkedin!='') <li><a href="{{isset($settings)?$settings->linkedin:''}}"><i class="fab fa-linkedin"></i></a></li>@endif
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 col-12">
@@ -75,7 +76,7 @@
                 </div>
             </div>
             <div class="footer-1-bar">
-                <p>DirectGroup © 2019. All Rights Reserved.</p>
+                <p>CREATIVO © 2019. All Rights Reserved.</p>
             </div>
         </div>
     </div>
