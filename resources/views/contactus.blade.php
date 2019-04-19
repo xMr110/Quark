@@ -25,44 +25,35 @@
     <div class="section-block grey-bg background-shape-3">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-12 col-12">
-                    <div class="contact-box-place-office">
-                        <i class="icon-office-building"></i>
-                        <h4>New Yourk Office</h4>
-                        <h6>Str. Charenc France / 109</h6>
-                        <ul>
-                            <li><i class="fas fa-envelope-open"></i>specthemes@mail.com</li>
-                            <li><i class="fas fa-phone"></i>(+123) 123-456-789</li>
-                            <li><i class="fas fa-fax"></i>(+123) 456-789</li>
-                        </ul>
-                    </div>
-                </div>
 
+                @foreach($contacts as $contact)
                 <div class="col-md-4 col-sm-12 col-12">
                     <div class="contact-box-place-office">
-                        <i class="icon-bank"></i>
-                        <h4>London Office</h4>
-                        <h6>Str. Sheram USA / 113</h6>
-                        <ul>
-                            <li><i class="fas fa-envelope-open"></i>specthemes@mail.com</li>
-                            <li><i class="fas fa-phone"></i>(+987) 987-654-321</li>
-                            <li><i class="fas fa-fax"></i>(+987) 123-456</li>
-                        </ul>
-                    </div>
-                </div>
+                            <div class="row">
+                                <div class="col-md-6 m-0" style="margin: 0!important;">
+                                    <img  style="max-width: 100%!important;" src="{{url('/assets/backend/images/contact.png')}}" alt="">
+                                </div>
+                                <div class="col-md-6" style="margin: 0!important; padding: 0!important;">
+                                    <h4 class="font-size-25" >{{$contact->title}}</h4>
+                                    <h5 class="font-size-20" style="color: #63666A; font-weight: 500!important; ">{{$contact->Subtitle}}</h5>
+                                </div>
 
-                <div class="col-md-4 col-sm-12 col-12">
-                    <div class="contact-box-place-office">
-                        <i class="icon-store"></i>
-                        <h4>France Office</h4>
-                        <h6>Str. Sheram USA / 113</h6>
-                        <ul>
-                            <li><i class="fas fa-envelope-open"></i>specthemes@mail.com</li>
-                            <li><i class="fas fa-phone"></i>(+987) 987-654-321</li>
-                            <li><i class="fas fa-fax"></i>(+987) 123-456</li>
+                            </div>
+
+                        <ul >
+                                <li ><i class="fas fa-home "></i>{{$contact->address}}</li>
+                                <li ><i class="fas fa-envelope-open "></i>{{$contact->email}}</li>
+                                <li  style="display: inline-block" ><i class="fas fa-phone"></i>{{$contact->phone}}</li>
+                               <li style="display: inline-block; margin-left: 5%;"><i class="fas fa-mobile"></i>{{$contact->mobile}}</li>
+                            <br>
+                              @if(isset($contact->fax)&&$contact->fax!='')<li  style="display: inline-block"><i class="fas fa-fax"></i>{{$contact->fax}}</li>@endif
+                            @if(isset($contact->whatsapp)&&$contact->whatsapp!='')<li  style="display: inline-block; margin-left: 5%;" ><i class="fab fa-whatsapp"></i>{{$contact->whatsapp}}</li>@endif
                         </ul>
                     </div>
                 </div>
+                    @endforeach
+
+
             </div>
         </div>
     </div>
@@ -74,28 +65,29 @@
             <div class="col-md-6 col-sm-12 col-12">
                 <div class="padding-10-perc">
                     <div class="section-heading text-left">
-                        <small class="grey-color font-size-20 font-weight-normal">Get In Touch</small>
-                        <h3 class="semi-bold font-size-32">Let's start a project together</h3>
+                        <h3 class="semi-bold font-size-32">Get In Touch</h3>
                         <div class="section-heading-line line-thin"></div>
                     </div>
-                    <form method="post" action="#" class="primary-form-3 mt-45">
+                    @include('layouts.alerts')
+
+                    <form method="post" action="{{action('SiteController@message')}}" enctype="multipart/form-data" class="primary-form-3 mt-45">
+                        {{csrf_field()}}
+
                         <div class="row">
-                            <div class="col-md-6 col-sm-6 col-12">
-                                <input type="text" name="name" placeholder="Name*">
+                            <div class="col-sm-6 col-12">
+                                <input type="text" name="name" placeholder="First Name*">
                             </div>
-                            <div class="col-md-6 col-sm-6 col-12">
-                                <input type="text" name="phone" placeholder="Phone Number*">
+                            <div class="col-sm-6 col-12">
+                                <input type="text" name="phone" placeholder="Phone*">
                             </div>
-                            <div class="col-12">
-                                <select name="subject">
-                                    <option>Subject</option>
-                                    <option>Development Manager</option>
-                                    <option>Project Lead</option>
-                                    <option>Solutions Analyst</option>
-                                </select>
+                            <div class="col-sm-6 col-12">
+                                <input type="text" name="title" placeholder="Title*">
+                            </div>
+                            <div class="col-sm-6 col-12">
+                                <input type="email" name="email" placeholder="Email*">
                             </div>
                             <div class="col-12">
-                                <textarea placeholder="Message*" name="message"></textarea>
+                                <textarea name="message" placeholder="Your Message*"></textarea>
                             </div>
                         </div>
                         <div>

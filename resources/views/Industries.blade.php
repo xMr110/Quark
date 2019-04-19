@@ -48,36 +48,36 @@
     </div>
     <!--Industries END-->
 
-    <!-- Clients Carousel START -->
-    <div class="section-block section-sm border-top">
-        <div class="container">
-            <div class="owl-carousel owl-theme clients clients-carousel">
-                <div class="item">
-                    <img src="/frontEnd/img/partners/partner1.png" alt="partner-image">
-                </div>
+    {{--<!-- Clients Carousel START -->--}}
+    {{--<div class="section-block section-sm border-top">--}}
+        {{--<div class="container">--}}
+            {{--<div class="owl-carousel owl-theme clients clients-carousel">--}}
+                {{--<div class="item">--}}
+                    {{--<img src="/frontEnd/img/partners/partner1.png" alt="partner-image">--}}
+                {{--</div>--}}
 
-                <div class="item">
-                    <img src="/frontEnd/img/partners/partner2.png" alt="partner-image">
-                </div>
+                {{--<div class="item">--}}
+                    {{--<img src="/frontEnd/img/partners/partner2.png" alt="partner-image">--}}
+                {{--</div>--}}
 
-                <div class="item">
-                    <img src="/frontEnd/img/partners/partner3.png" alt="partner-image">
-                </div>
+                {{--<div class="item">--}}
+                    {{--<img src="/frontEnd/img/partners/partner3.png" alt="partner-image">--}}
+                {{--</div>--}}
 
-                <div class="item">
-                    <img src="/frontEnd/img/partners/partner4.png" alt="partner-image">
-                </div>
+                {{--<div class="item">--}}
+                    {{--<img src="/frontEnd/img/partners/partner4.png" alt="partner-image">--}}
+                {{--</div>--}}
 
-                <div class="item">
-                    <img src="/frontEnd/img/partners/partner5.png" alt="partner-image">
-                </div>
+                {{--<div class="item">--}}
+                    {{--<img src="/frontEnd/img/partners/partner5.png" alt="partner-image">--}}
+                {{--</div>--}}
 
-                <div class="item">
-                    <img src="/frontEnd/img/partners/partner6.png" alt="partner-image">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Clients Carousel END -->
+                {{--<div class="item">--}}
+                    {{--<img src="/frontEnd/img/partners/partner6.png" alt="partner-image">--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+    {{--<!-- Clients Carousel END -->--}}
 
 @endsection

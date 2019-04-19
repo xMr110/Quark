@@ -14,10 +14,12 @@
     <div class="rev_slider_wrapper bg-arrows">
     <div id="rev_slider" class="rev_slider fullscreenbanner">
         <ul>
-
-        <!-- Slides -->
+            <!-- Slides -->
                 @foreach($slides as $slide)
                 <li data-delay="5000" data-transition="slotzoom-horizontal" data-slotamount="7" data-masterspeed="1000" data-fsmasterspeed="1000">
+
+
+
 
                 <!-- Main image-->
                     <img src="{{url('/storage/'.$slide->image_path)}}"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
@@ -61,10 +63,29 @@
                          data-splitin="none"
                          data-splitout="none">{{$slide->description}}
                     </div>
+                    <div class="slide-subtitle mb-25 tp-caption tp-resizeme text-right white-color "
+                         data-x="['right','right','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0', '-150', '-250']"
+                         data-fontsize="['18', '18', '18', '18']"
+                         data-fontweight="300"
+                         data-lineheight="['30']"
+                         data-width="['1200','1000','550']"
+                         data-whitespace="nowrap"
+                         data-transform_idle="o:1;"
+                         data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1200;e:Power1.easeInOut;"
+                         data-transform_out="opacity:0;s:1000;s:1000;"
+                         data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                         data-start="1500"
+                         data-splitin="none"
+                         data-splitout="none"
+                    >                    <img  src="{{isset($settings)?$settings->logo!=''?url('/storage/'.$settings->logo):'':''}}"  alt="logo"  >
+                    </div>
+
                 </li>
              @endforeach
             </ul>
-        </div>
+
+    </div>
     </div>
     <!-- End revolution slider -->
 

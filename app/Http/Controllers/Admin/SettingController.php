@@ -47,6 +47,11 @@ class SettingController extends Controller
 
 //            @unlink(public_path('app/public/'. $settings->logo));
         }
+        if ($request->hasFile('footerLogo')) {
+            $input['footerLogo'] = $request->file('footerLogo')->store('basics', 'public');
+
+//            @unlink(public_path('app/public/'. $settings->logo));
+        }
         foreach ($input as $key => $value) {
             if(!is_null($value))
                 $this->model->set($key, $value);

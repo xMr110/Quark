@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Contact;
 use App\Models\Industry;
 use App\Models\Literature;
 use App\Models\Message;
@@ -29,7 +30,8 @@ class SiteController extends Controller
 
     public function contact()
     {
-        return view('contactus');
+        $contacts = Contact::all();
+        return view('contactus',compact('contacts'));
     }
 
     public function industries()

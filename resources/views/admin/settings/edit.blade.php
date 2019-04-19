@@ -155,6 +155,41 @@
                                             </div>
                                         </div>
 
+                                        <div class="col-md-6">
+                                            <div class="form-group {{ $errors->has('footerLogo') ? 'has-danger' : '' }}">
+                                                <label class="control-label">Footer Logo</label>
+                                                <input type="file" name="footerLogo" class="form-control">
+
+                                                @if ($errors->has('footerLogo'))
+                                                    <small class="form-control-feedback">{{ $errors->first('footerLogo') }}</small>
+                                                @endif
+
+                                                @if(isset($settings->footerLogo) && $settings->footerLogo != "")
+                                                    <div class="col-md-12" style="margin: 10px">
+                                                        <div class="row el-element-overlay">
+                                                            <div class="el-card-item">
+                                                                <div class="el-card-avatar el-overlay-1"><img
+                                                                        src="{{ '/storage/'. $settings->footerLogo }}"
+                                                                        alt="Main Page"
+                                                                        style="background-color: black; max-width: 150px">
+                                                                    <div class="el-overlay">
+                                                                        <ul class="el-info">
+                                                                            <li>
+                                                                                <a class="btn default btn-outline image-popup-vertical-fit"
+                                                                                   href="{{ '/storage/'. $settings->footerLogo }}"
+                                                                                   target="_blank"><i
+                                                                                        class="icon-magnifier"></i></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
 
