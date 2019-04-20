@@ -70,7 +70,7 @@
                 <div class="col-md-3 col-sm-12 col-12">
                     <div class="blog-post-right">
                         <h4 class="blog-widget-title">Latest Literature</h4>
-                        @foreach($literatures as $literature)
+                        @foreach($literatures as  $key=>$literature)
                         <div class="top-news mt-20">
                             <div class="top-news-info">
                                 <div class="row">
@@ -78,11 +78,30 @@
                                         <img src="{{url('/storage/'.$literature->image_path)}}" alt="img">
                                     </div>
                                     <div class="col-md-8 col-sm-8 col-12">
-                                        <h3><a href="#">{{$literature->title}}</a></h3>
+                                        <h3><a href="" data-izimodal-open="#modal{{$key}}" >{{$literature->title}}</a></h3>
                                         <h6>{{$literature->created_at}}</h6>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Modal Start -->
+                            <div class="izimodal" id="modal{{$key}}" data-iziModal-width="600px" data-iziModal-fullscreen="true" data-iziModal-transitionIn="fadeIn" data-iziModal-transitionOut="fadeOut">
+                                <!-- Close Button Start -->
+                                <div class="close-modal">
+                                    <button class="close-modal" data-izimodal-close><i class="ti-close"></i></button>
+                                </div>
+                                <!-- Close Button Start -->
+                                <!-- Modal Body Start -->
+                                <div class="modal-inside inner-30 center-holder">
+                                    <div class="modal-heading">
+                                        <h4>{{$literature->title}}</h4>
+                                    </div>
+                                    <p>{!! $literature->description !!}</p>
+                                    <a class="button-md button-dark m-5" href="{{'/storage/'.$literature->attachment}}">Download</a>
+
+                                </div>
+                                <!-- Modal Body End -->
+                            </div>
+                            <!-- Modal End -->
                         </div>
                         @endforeach
                     </div>
