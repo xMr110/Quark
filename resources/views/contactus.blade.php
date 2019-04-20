@@ -25,7 +25,6 @@
     <div class="section-block grey-bg background-shape-3">
         <div class="container">
             <div class="row">
-
                 @foreach($contacts as $contact)
                 <div class="col-md-4 col-sm-12 col-12">
                     <div class="contact-box-place-office">
@@ -47,7 +46,7 @@
                                <li style="display: inline-block; margin-left: 5%;"><i class="fas fa-mobile"></i>{{$contact->mobile}}</li>
                             <br>
                               @if(isset($contact->fax)&&$contact->fax!='')<li  style="display: inline-block"><i class="fas fa-fax"></i>{{$contact->fax}}</li>@endif
-                            @if(isset($contact->whatsapp)&&$contact->whatsapp!='')<li  style="display: inline-block; margin-left: 5%;" ><i class="fab fa-whatsapp"></i>{{$contact->whatsapp}}</li>@endif
+                            @if(isset($contact->whatsapp)&&$contact->whatsapp!='')<li  style="display: inline-block;@if(isset($contact->fax)&&$contact->fax!='') margin-left: 5%;@endif>"> <i class="fab fa-whatsapp"></i>{{$contact->whatsapp}}</li>@endif
                         </ul>
                     </div>
                 </div>
