@@ -48,7 +48,9 @@
                             <div class="display-b" >
                                 <span>Category: </span>
                                 <ul>
-                                    <li><a href="#">{{$product->category->title}}</a></li>
+                                    @foreach($product->categories as $category)
+                                    <li><a href="#">{{$category->title}}</a></li>
+                                        @endforeach
                                 </ul>
                             </div>
                             <div class="display-b">
