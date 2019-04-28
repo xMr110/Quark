@@ -67,8 +67,7 @@
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 col-12">
-                    <h2>Contact Us</h2>
-                    <h6 class="semi-bold">@lang('homepage.contactContactTitle')</h6>
+                    <h2>@lang('homepage.contactContactTitle')</h2>
                     <ul class="grey-list mt-15">
                         <li><i class="fa fa-phone"></i>{{isset($settings->phone)?$settings->phone:''}}</li>
                         <li><i class="fa fa-envelope-open"></i>{{isset($settings->email)?$settings->email:''}}</li>

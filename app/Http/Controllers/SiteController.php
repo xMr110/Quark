@@ -17,10 +17,12 @@ class SiteController extends Controller
     public function index()
     {
 
+
+        $partners = Partner::all();
         $industries = Industry::all();
         $slides = Slider::all();
         $literatures = Literature::all();
-        return view('index', compact('slides', 'industries', 'literatures'));
+        return view('index', compact('slides', 'industries', 'literatures','partners'));
     }
 
     public function about()
@@ -42,13 +44,29 @@ class SiteController extends Controller
 
     public function SingleIndustry($id)
     {
-        $literatures = Literature::latest()->take(3)->get();
         $industry = Industry::findOrFail($id);
         $categories = Category::all()->where('industry_id', $id);
+        $partners = array();
+        $products = array();
+        foreach ($categories as $category)
+        {
+            foreach ($category->products as $product)
+            {
+                array_push($products,$product);
+            }
+        }
+        $products=collect($products);
+        $products = $products->unique('id');
+        foreach ($products as $product)
+        {
+            array_push($partners,$product->partner);
+        }
+        $partners=collect($partners);
+        $partners = $partners->unique('id');
 
 //        //TODO
         $industries = Industry::all();
-        return view('SingleIndustry', compact('industries', 'industry', 'categories', 'literatures'));
+        return view('SingleIndustry', compact('industries', 'industry', 'categories', 'partners'));
     }
 
     public function SingleCategory($id)

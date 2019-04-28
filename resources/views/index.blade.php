@@ -77,7 +77,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-12">
-                    <img src="{{isset($settings->aboutImage)?$settings->aboutImage !=''?url('/storage/'.$settings->aboutImage):'':''}}" class="rounded-border shadow-primary" alt="">
+                    <img src="{{isset($settings->aboutImage)?$settings->aboutImage !=''?url('/storage/'.$settings->aboutImage):'':''}}" class="rounded-border shadow-light" alt="">
                 </div>
                 <div class="col-md-6 col-sm-6 col-12">
                     <div class="pl-30-md">
@@ -99,6 +99,37 @@
         </div>
     </div>
     <!--Info section END-->
+
+
+
+
+    <!--Partner START-->
+
+    <div class="section-block section-sm border-top">
+        <div class="container">
+            <div class="section-heading text-left ">
+                <h3 class="semi-bold font-size-35">@lang('homepage.PartnerTitle')</h3>
+                <div class="section-heading-line line-thin"></div>
+            </div>
+            <div class="mt-25 owl-carousel owl-theme clients clients-carousel ">
+                @foreach($partners as $key=>$partner)
+                    <!-- Clients Carousel START -->
+
+                                <div class="item">
+                                <img src="{{url('/storage/'.$partner->image_path)}}" alt="partner-image">
+                                </div>
+
+                    <!-- Clients Carousel END -->
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+    <!--Partner END-->
+
+
+
+
 
     <!--Industries START-->
     <div class="section-block">

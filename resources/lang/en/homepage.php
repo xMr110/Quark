@@ -9,4 +9,6 @@ return [
     'productsTitle' =>'Market your business to own your market',
     'categoryTitle' =>'Market your business to own your market',
     'SingleIndustry' =>'Industry Category',
+    'PartnerTitle' =>'Global Partners',
+
 ];

@@ -18,7 +18,7 @@ class CreateIndustriesTable extends Migration
             $table->string('title');
             $table->string('image_path');
             $table->text('description');
-            $table->text('effectArea');
+            $table->text('effectArea')->nullable();
             $table->timestamps();
         });
     }
