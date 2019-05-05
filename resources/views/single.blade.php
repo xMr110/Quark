@@ -87,9 +87,12 @@
                             <!-- Tab 1 End -->
 
                             <!-- Tab 2 Start -->
-                            <div id='tab-2' class="clearfix product-tab-body">
+                      <div id='tab-2' class="clearfix product-tab-body">
+                          @if($product->techInfo!='')
                                 <h3>Technical specifications</h3>
                               <p>{!! $product->techInfo !!}</p>
+                                @endif
+
                             </div>
                             <!-- Tab 2 End -->
 
