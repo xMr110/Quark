@@ -6,7 +6,7 @@
 @section('content')
 
     <!--Breadcrumb START-->
-    <div class="breadcrumb-section jarallax pixels-bg" data-jarallax data-speed="0.6">
+    <div style="@if(isset($settings->Literature_Background)) background: url({{'/storage/' .$settings->Literature_Background}}) fixed;@endif " class="breadcrumb-section jarallax pixels-bg" data-jarallax data-speed="0.6">
         <div class="container text-center">
             <h1>Literatures</h1>
             <ul>

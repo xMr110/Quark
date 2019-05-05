@@ -7,7 +7,7 @@
 
 @section('content')
     <!--Breadcrumb START-->
-    <div style="margin-bottom: 75px;" class="breadcrumb-section jarallax pixels-bg" data-jarallax data-speed="0.6">
+    <div style="margin-bottom: 75px; @if(isset($settings->About_Background)) background: url({{'/storage/' .$settings->About_Background}}) fixed;@endif " class="breadcrumb-section jarallax pixels-bg" data-jarallax data-speed="0.6">
         <div class="container text-center">
             <h1>About Us I</h1>
             <ul>

@@ -10,7 +10,7 @@
         <div class="nav-header">
             <a class="nav-brand" href="/">
                 @if(Request::path() === '/' )
-                <img style="width: 200px!important; margin-bottom: 5px; max-width: 60%!important;" src="{{isset($settings)?$settings->logo!=''?url('/storage/'.$settings->logo):'':''}}"  alt="logo"  class="main-logo" id="light_logo">
+                <img style="width: 235px!important; margin-bottom: 5px; max-width: 60%!important;" src="{{isset($settings)?$settings->logo!=''?url('/storage/'.$settings->logo):'':''}}"  alt="logo"  class="main-logo" id="light_logo">
             @endif
                 <img style="width: 100px!important;  margin-bottom: 5px;  max-width: 60%!important;" src="{{isset($settings)?$settings->logo!=''?url('/storage/'.$settings->logo):'':''}}" alt="logo" class="main-logo" id="main_logo">
             </a>
@@ -28,7 +28,7 @@
                             Logo.setAttribute('src', '{{url('/storage/' . $settings->logo)}}');
 
                         } else {
-                            Logo.style.width = '200px';
+                            Logo.style.width = '235px';
                             Logo.setAttribute('src', '{{ url('/storage/' . $settings->logo) }}');
                         }
                     }

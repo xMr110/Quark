@@ -6,7 +6,7 @@
 
 @section('content')
     <!--Breadcrumb START-->
-    <div class="breadcrumb-section jarallax pixels-bg" data-jarallax data-speed="0.6">
+    <div style="@if(isset($settings->Industry_Background)) background: url({{'/storage/' .$settings->Industry_Background}}) fixed;@endif " class="breadcrumb-section jarallax pixels-bg" data-jarallax data-speed="0.6">
         <div class="container text-center">
             <h1>{{$industry->title}}</h1>
             <ul>
@@ -59,7 +59,9 @@
                         </blockquote>
 
                         <p class="mt-25">
+                            @if(isset($industry->effectArea)&&$industry->effectArea!='')
                             {!! $industry->effectArea !!}
+                                @endif
                         </p>
 
                     </div>
@@ -70,7 +72,9 @@
                 <div class="col-md-3 col-sm-12 col-12">
                     <div class="blog-post-right">
                         <h4 class="blog-widget-title">Related Partner</h4>
+                        @if($partners->count())
                         @foreach($partners as  $key=>$partner)
+                            @if($partner!=null)
                         <div class="top-news mt-20">
                             <div class="top-news-info">
                                 <div class="row">
@@ -78,12 +82,15 @@
                                         <img src="{{url('/storage/'.$partner->image_path)}}" alt="img">
                                     </div>
                                     <div class="col-md-8 col-sm-8 col-12">
-                                        <h3><a href="" >{{$partner->title}}</a></h3>
+                                        <h3><a href="{{action('SiteController@partner',$partner)}}" >{{$partner->title}}</a></h3>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                                @endif
+
                         @endforeach
+                            @endif
                     </div>
                 </div>
                 <!-- Right Side END -->

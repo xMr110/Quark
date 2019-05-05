@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->integer('partner_id')->nullable();
             $table->string('title');
             $table->text('description');
-            $table->text('techInfo');
+            $table->text('techInfo')->nullable();;
             $table->string('video_path')->nullable();
             $table->string('pdf_path')->nullable();
             $table->timestamps();

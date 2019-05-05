@@ -7,7 +7,7 @@
 
 @section('content')
     <!--Breadcrumb START-->
-    <div class="breadcrumb-section jarallax pixels-bg" data-jarallax data-speed="0.6">
+    <div style="@if(isset($settings->Products_Background)) background: url({{'/storage/' .$settings->Products_Background}}) fixed;@endif " class="breadcrumb-section jarallax pixels-bg" data-jarallax data-speed="0.6">
         <div class="container text-center">
             <h1>{{$product->title}}</h1>
             <ul>
@@ -61,13 +61,7 @@
                             </div>
                         </div>
 
-                        {{--<div class="product-share mt-20">--}}
-                            {{--<span>Share: </span>--}}
-                            {{--<a href="#"><i class="fab fa-facebook"></i></a>--}}
-                            {{--<a href="#"><i class="fab fa-twitter"></i></a>--}}
-                            {{--<a href="#"><i class="fab fa-google-plus"></i></a>--}}
-                            {{--<a href="#"><i class="fab fa-pinterest"></i></a>--}}
-                        {{--</div>--}}
+
 
                     </div>
                 </div>
@@ -81,7 +75,7 @@
                         <div class='tabs tabs_animate mt-70'>
                             <ul class="tab-menu left-holder">
                                 <li><a href="#tab-1">Product Description</a></li>
-                                <li><a href="#tab-2">Technical Information</a></li>
+                                @if($product->techInfo!='')<li><a href="#tab-2">Technical Information</a></li>@endif
                                 @if($product->video_path!=''||$product->pdf_path!='')<li><a href="#tab-3">Attachment or Video</a></li>@endif
                             </ul>
 

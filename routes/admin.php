@@ -10,6 +10,8 @@ Route::get('/', function (){
 Route::resource('settings','SettingController',
     ['only'=>['index','store']
     ]);
+
+Route::resource('Backgrounds','BackgroundController',['only'=>['index','store']]);
 Route::get('/about','SettingController@about');
 
 Route::resource('User','UserController');

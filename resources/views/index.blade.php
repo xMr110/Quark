@@ -14,6 +14,23 @@
     <div class="rev_slider_wrapper bg-arrows">
     <div id="rev_slider" class="rev_slider fullscreenbanner">
         <ul>
+            <style>
+                @media only screen and (max-width: 600px) {
+                    .slide-title{
+                        max-width: 100%!important;
+                        max-height: 100%!important;
+                        line-height: normal!important;
+
+                        font-size: 40px!important;
+                    }
+                    .slide-subtitle {
+                        line-height: normal!important;
+                        max-width: 100%!important;
+                        max-height: 100%!important;
+                        font-size: 20px!important;
+                    }
+                }
+            </style>
             <!-- Slides -->
                 @foreach($slides as $slide)
                 <li data-delay="5000" data-transition="slotzoom-horizontal" data-slotamount="7" data-masterspeed="1000" data-fsmasterspeed="1000">
@@ -27,7 +44,7 @@
                     <!-- Layer 1 -->
                     <div class="slide-title tp-caption tp-resizeme text-left white-color"
                          data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['-20','-20', '-150', '-350']"
+                         data-y="['bottom','bottom','middle','middle']" data-voffset="['150','150', '-150', '-350']"
                          data-fontsize="['70','70', '70', '125']"
                          data-fontweight="600"
                          data-lineheight="['85','85', '80', '135']"
@@ -49,7 +66,7 @@
                     <!-- Layer 2 -->
                     <div class="slide-subtitle tp-caption tp-resizeme text-left white-color "
                          data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['90','90', '15', '15']"
+                         data-y="['bottom','bottom','middle','middle']" data-voffset="['90','90', '15', '15']"
                          data-fontsize="['18', '18', '18', '18']"
                          data-fontweight="300"
                          data-lineheight="['30']"

@@ -9,7 +9,7 @@
 
 
     <!--Breadcrumb START-->
-    <div class="breadcrumb-section jarallax pixels-bg" data-jarallax data-speed="0.6">
+    <div style="@if(isset($settings->Products_Background)) background: url({{'/storage/' .$settings->Products_Background}}) fixed;@endif " class="breadcrumb-section jarallax pixels-bg" data-jarallax data-speed="0.6">
         <div class="container text-center">
             <h1>Products</h1>
             <ul>

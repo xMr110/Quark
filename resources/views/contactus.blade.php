@@ -9,7 +9,7 @@
 
 
     <!--Breadcrumb START-->
-    <div class="breadcrumb-section jarallax pixels-bg" data-jarallax data-speed="0.6">
+    <div style="@if(isset($settings->Contact_Background)) background: url({{'/storage/' .$settings->Contact_Background}}) fixed;@endif " class="breadcrumb-section jarallax pixels-bg" data-jarallax data-speed="0.6">
         <div class="container text-center">
             <h1>Contact Us I</h1>
             <ul>
@@ -97,7 +97,7 @@
             </div>
             <div class="col-md-6 col-sm-12 col-12">
                 <div class="full-background min-350">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.405250382651!2d-0.1264760844209047!3d51.50578081864282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604cf3bc8dc73%3A0x992d4348d17f21b6!2sThe+Royal+Horseguards!5e0!3m2!1sru!2s!4v1538901529585"  class="full-width full-height"></iframe>
+                    <iframe src="https://maps.google.com/maps?q=dubai&t=&z=13&ie=UTF8&iwloc=&output=embed"  class="full-width full-height"></iframe>
                 </div>
             </div>
         </div>

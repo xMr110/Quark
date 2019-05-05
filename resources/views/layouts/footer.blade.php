@@ -1,7 +1,7 @@
 
 <!--Footer START-->
 <footer>
-    <div class="footer-1">
+    <div class="footer-1" style="background: #63666a45!important;">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6 col-12">
@@ -19,16 +19,16 @@
                     <div class="row mt-25">
                         <div class="col-md-6 col-sm-6">
                             <ul class="footer-nav">
-                                <li><a href="/about">About Us</a></li>
-                                <li><a href="#">Our Products</a></li>
-                                <li><a href="#">Our Industries</a></li>
+                                <li><a href="/about" style="color: #999">About Us</a></li>
+                                <li><a href="/products"  style="color: #999">Our Products</a></li>
+                                <li><a href="/industries"  style="color: #999">Our Industries</a></li>
                             </ul>
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <ul class="footer-nav">
-                                <li><a href="#">Our Literatures</a></li>
-                                <li><a href="#">Our Partners</a></li>
-                                <li><a href="/contact">Contact Us</a></li>
+                                <li><a href="/literatures"  style="color: #999">Our Literatures</a></li>
+                                <li><a href="/partners"  style="color: #999">Our Partners</a></li>
+                                <li><a href="/contact"  style="color: #999">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -38,8 +38,8 @@
                     <ul class="footer-news mt-25">
                         @foreach($footerLits as $key=>$footerLit)
                         <li>
-                            <a data-izimodal-open="#modal{{$key}}"  href="">{{$footerLit->title}}</a>
-                            <strong><i class="fa fa-calendar"></i> {{$footerLit->created_at}}</strong>
+                            <a data-izimodal-open="#modal{{$key}}"   style="color: #999" href="">{{$footerLit->title}}</a>
+                            <strong  style="color: #999"><i class="fa fa-calendar"></i> {{$footerLit->created_at}}</strong>
                         </li>
 
                             <!-- Modal Start -->
@@ -75,7 +75,7 @@
                 </div>
             </div>
             <div class="footer-1-bar">
-                <p>CREATIVO © 2019. All Rights Reserved.</p>
+                <a class="small-text" href="http://www.creativo-sy.com/" style="color: #999">CREATIVO © 2019. All Rights Reserved.</a>
             </div>
         </div>
     </div>

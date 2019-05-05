@@ -56,13 +56,13 @@ class SiteController extends Controller
             }
         }
         $products=collect($products);
-        $products = $products->unique('id');
+            $products = $products->unique('id');
         foreach ($products as $product)
         {
             array_push($partners,$product->partner);
         }
         $partners=collect($partners);
-        $partners = $partners->unique('id');
+           $partners = $partners->unique('id');
 
 //        //TODO
         $industries = Industry::all();

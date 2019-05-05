@@ -26,7 +26,6 @@ class ProductRequest extends FormRequest
         return [
             'title'=>'required',
             'description'=>'required',
-            'techInfo'=>'required',
             'category_id'=>'required',
 
         ];
