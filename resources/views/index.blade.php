@@ -167,7 +167,6 @@
                         <div class="service-box-2-overlay">
                             <div class="service-box-2-text">
                                 <h6><a href="{{action('SiteController@SingleIndustry',$industry)}}">{{$industry->title}}</a></h6>
-                                <h4>{!! str_limit($industry->description,20) !!}</h4>
                             </div>
                         </div>
                     </div>
