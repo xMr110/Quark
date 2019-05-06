@@ -3,6 +3,27 @@
     HomePage
     @endsection
 
+
+@section('style')
+    <style>
+        @media only screen and (max-width: 450px) {
+            .slide-title{
+                max-width: 100%!important;
+                max-height: 100%!important;
+                line-height: normal!important;
+
+                font-size: 40px!important;
+            }
+            .slide-subtitle {
+                line-height: normal!important;
+                max-width: 100%!important;
+                max-height: 100%!important;
+                font-size: 20px!important;
+            }
+        }
+    </style>
+    @endsection
+
 @section('content')
     <!-- Preloader Start-->
     <div id="preloader">
@@ -14,33 +35,12 @@
     <div class="rev_slider_wrapper bg-arrows">
     <div id="rev_slider" class="rev_slider fullscreenbanner">
         <ul>
-            <style>
-                @media only screen and (max-width: 600px) {
-                    .slide-title{
-                        max-width: 100%!important;
-                        max-height: 100%!important;
-                        line-height: normal!important;
 
-                        font-size: 40px!important;
-                    }
-                    .slide-subtitle {
-                        line-height: normal!important;
-                        max-width: 100%!important;
-                        max-height: 100%!important;
-                        font-size: 20px!important;
-                    }
-                }
-            </style>
             <!-- Slides -->
                 @foreach($slides as $slide)
                 <li data-delay="5000" data-transition="slotzoom-horizontal" data-slotamount="7" data-masterspeed="1000" data-fsmasterspeed="1000">
-
-
-
-
                 <!-- Main image-->
                     <img src="{{url('/storage/'.$slide->image_path)}}"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
-
                     <!-- Layer 1 -->
                     <div class="slide-title tp-caption tp-resizeme text-left white-color"
                          data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']"
