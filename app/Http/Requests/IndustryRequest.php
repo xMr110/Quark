@@ -26,7 +26,6 @@ class IndustryRequest extends FormRequest
         return [
             'title'=>'required',
             'description'=>'required',
-            'effectArea'=>'required',
         ];
     }
 }
