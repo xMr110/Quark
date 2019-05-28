@@ -60,9 +60,11 @@
         <div class="container">
             <div class="owl-carousel owl-theme clients clients-carousel">
                @foreach($category->products as $product)
+                   @if($product->partner_id != '')
                 <div class="item">
                     <img src="{{url('/storage/'.$product->partner->image_path)}}" alt="partner-image">
                 </div>
+                    @endif
                    @endforeach
             </div>
         </div>

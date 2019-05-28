@@ -32,12 +32,12 @@
             </div>
             <div class="row mt-5 mb-5" style="display: block">
                 <div class="form-group mr-4" style="display: inline-block;">
-                    <h6 class="">Select Industry</h6>
-                    <select  name="industry" id="industry" class="form-control input-lg dynamic" >
-                        <option value="" selected>Industry</option>
+                    <h6 class="">Select Partner</h6>
+                    <select  name="partner" id="partner" class="form-control input-lg dynamic" >
+                        <option value="" selected>Partner</option>
                         <option value="A1">All</option>
-                        @foreach($industries as $industry)
-                            <option value="{{ $industry->id}}">{{ $industry->title }}</option>
+                        @foreach($partners as $partner)
+                            <option value="{{ $partner->id}}">{{ $partner->title }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -84,12 +84,12 @@
 
 @section('script')
     <script>
-        $('#industry').change(function(){
-            var industryID = $(this).val();
-            if(industryID){
+        $('#partner').change(function(){
+            var partnerID = $(this).val();
+            if(partnerID){
                 $.ajax({
                     type:"GET",
-                    url:"{{url('get-category-list')}}?industry_id="+industryID,
+                    url:"{{url('get-category-list')}}?partner_id="+partnerID,
                     success:function(res){
                         if(res){
                             $("#category").empty();
@@ -111,11 +111,11 @@
         });
         $('#category').on('change',function(){
             var categoryID = $(this).val();
-            var IndustrAll = $('#industry').val();
+            var partnerAll = $('#partner').val();
             if(categoryID){
                 $.ajax({
                     type:"GET",
-                    url:"{{url('get-product-list')}}?category_id="+categoryID+"&industry_id="+IndustrAll,
+                    url:"{{url('get-product-list')}}?category_id="+categoryID+"&partner_id="+partnerAll,
                     success:function(res){
                         if(res){
                             $("#myproducts").empty();

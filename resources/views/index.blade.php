@@ -133,7 +133,8 @@
                     <!-- Clients Carousel START -->
 
                                 <div class="item">
-                                <img src="{{url('/storage/'.$partner->image_path)}}" alt="partner-image">
+                                    <a href="{{action('SiteController@partner',$partner)}}">
+                                <img src="{{url('/storage/'.$partner->image_path)}}" alt="partner-image"></a>
                                 </div>
 
                     <!-- Clients Carousel END -->

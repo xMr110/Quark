@@ -77,14 +77,33 @@ class SiteController extends Controller
 
     public function Products()
     {
-        $industries = Industry::all();
+        $partners = Partner::all();
         $categories = Category::all();
         $products = Product::all();
-        return view('products', compact('products','categories','industries'));
+        return view('products', compact('products','categories','partners'));
     }
     public function getCategories(Request $request)
     {
-        $categoreis = Category::all()->where('industry_id', $request->industry_id)->pluck('title','id');
+        $partner_id = $request->get('partner_id');
+        $categories = Category::all();
+        $categoriesB = array();
+        foreach ($categories as $category)
+        {
+            foreach ($category->products as $product)
+            {
+                if ($product->partner_id == $partner_id)
+                {
+                    array_push($categoriesB,$category);
+                }
+            }
+
+        }
+        $categoriesB=collect($categoriesB);
+
+        $categoriesB = $categoriesB->unique('id');
+
+        $categoreis = $categoriesB->pluck('title','id');
+
 
         return response()->json($categoreis);
     }
@@ -93,7 +112,7 @@ class SiteController extends Controller
 
         switch ($request)
         {
-            case $request->category_id == 'B1' && $request->industry_id =='A1':
+            case $request->category_id == 'B1' && $request->partner_id =='A1':
                 $html = '';
                 $products = Product::all();
                 foreach ($products as $product) {
@@ -110,17 +129,28 @@ class SiteController extends Controller
             case $request->category_id == 'B1':
                 $html = '';
 
-                $categories = Category::all()->where('industry_id', $request->industry_id);
-                $products = array();
-                foreach ($categories as $category)
-                {
-                   foreach ($category->products as $product)
-                   {
-                      array_push($products,$product);
-                   }
-                }
-                $products=collect($products);
-                $products = $products->unique('id');
+//                $categories = Category::all()->where('industry_id', $request->industry_id);
+//                $products = array();
+//                foreach ($categories as $category)
+//                {
+//                   foreach ($category->products as $product)
+//                   {
+//                      array_push($products,$product);
+//                   }
+//                }
+//                $products=collect($products);
+//                $products = $products->unique('id');
+//            $productsB= array();
+            $products = Product::all()->where('partner_id',$request->partner_id);
+//            foreach ($products as $product)
+//            {
+//                if ($product->category_id == $request->category_id)
+//                {
+//                    array_push($productsB,$product);
+//                }
+//            }
+//            $productsB = collect($productsB);
+//            $productsB = $productsB->unique('id');
                 foreach ($products as $product) {
                     $html = $html.'<div class="p-0  col-md-4 col-xs-12 col-sm-12 service-block-2 mr-2 ml-2">
                         <img  src="'.url('/storage/'.$product->image_path).'" alt="img">
@@ -137,13 +167,15 @@ class SiteController extends Controller
                 $category = Category::findOrFail($request->category_id);
 
                 foreach ($category->products as $product) {
-                    $html = $html.'<div class="p-0  col-md-4 col-xs-12 col-sm-12 service-block-2 mr-2 ml-2">
-                        <img  src="'.url('/storage/'.$product->image_path).'" alt="img">
+                    if ($product->partner_id == $request->partner_id) {
+                        $html = $html . '<div class="p-0  col-md-4 col-xs-12 col-sm-12 service-block-2 mr-2 ml-2">
+                        <img  src="' . url('/storage/' . $product->image_path) . '" alt="img">
                         <div class="service-block-2-content">
-                            <h4><a href="'.action('SiteController@Product',$product).'">'.$product->title.'</a></h4>
-                            <a href="'.action('SiteController@Product',$product).'" class="service-block-2-btn">Read more <i class="fa fa-arrow-right primary-color"></i></a>
+                            <h4><a href="' . action('SiteController@Product', $product) . '">' . $product->title . '</a></h4>
+                            <a href="' . action('SiteController@Product', $product) . '" class="service-block-2-btn">Read more <i class="fa fa-arrow-right primary-color"></i></a>
                         </div>
                     </div>';
+                    }
                 }
                 return $html;
                 break;
