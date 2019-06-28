@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Contact;
+use App\Models\Course;
 use App\Models\Industry;
 use App\Models\Literature;
 use App\Models\Message;
@@ -203,6 +204,17 @@ class SiteController extends Controller
     {
         $partners = Partner::all();
         return view('Partners',compact('partners'));
+    }
+    public function courses()
+    {
+        $courses = Course::all();
+
+        return view('courses',compact('courses'));
+    }
+    public function course($id)
+    {
+        $course = Course::findOrFail($id);
+        return view('SingleCourse',compact('course'));
     }
 
     public function Message(Request $request)

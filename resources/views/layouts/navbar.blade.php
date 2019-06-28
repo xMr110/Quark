@@ -44,6 +44,7 @@
                 <li><a href="/products">@lang('navbar.products')</a></li>
                 <li><a href="/partners">@lang('navbar.globalPartners')</a></li>
                 <li><a href="/literatures">@lang('navbar.literature')</a></li>
+                <li><a href="/courses">@lang('navbar.course')</a></li>
                 <li><a href="/contact">@lang('navbar.contactUs')</a></li>
 
             </ul>

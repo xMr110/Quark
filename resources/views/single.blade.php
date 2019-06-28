@@ -56,7 +56,7 @@
                             <div class="display-b">
                                 <span>Producer: </span>
                                 <ul>
-                                    <li>{{isset($product)?$product->partner_id!=''?$product->partner->title:($product->company!=''?$product->company:''):''}}</li>
+                                    <li>@if($product->partner_id!='')<a href="{{action('SiteController@partner',$product->partner_id)}}">@endif{{isset($product)?$product->partner_id!=''?$product->partner->title:($product->company!=''?$product->company:''):''}}@if($product->partner_id!='')</a>@endif</li>
                                 </ul>
                             </div>
                         </div>

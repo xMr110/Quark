@@ -24,5 +24,6 @@ Route::resource('Partner','PartnerController');
 Route::resource('Category','CategoryController');
 Route::resource('Product','ProductController');
 Route::resource('Literature','LiteratureController');
+Route::resource('Courses','CourseController');
 Route::resource('contacts','ContactController');
 Route::resource('Message','MessageController',['only'=>['index','show']]);

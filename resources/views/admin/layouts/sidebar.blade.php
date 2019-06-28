@@ -112,6 +112,17 @@
                 </li>
                 <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                         <i
+                            class="mdi mdi-format-list-bulleted"></i>
+                        <span class="hide-menu">
+                        Courses
+                    </span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{action('Admin\CourseController@index')}}">All</a></li>
+                        <li><a href="{{action('Admin\CourseController@create')}}">New</a></li>
+                    </ul>
+                </li>
+                <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                        <i
                             class="mdi mdi-newspaper"></i>
                         <span class="hide-menu">
                         Backgrounds

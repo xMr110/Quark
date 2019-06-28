@@ -26,7 +26,6 @@ class BackgroundController extends Controller
 
         $input = $request->except(['_token', '_method']);
 
-
         if ($request->hasFile('About_Background')) {
             $input['About_Background'] = $request->file('About_Background')->store('Backgrounds', 'public');
 
@@ -61,6 +60,11 @@ class BackgroundController extends Controller
             @unlink(storage_path('app/public/'. $settings->Contact_Background));
         }
 
+        if ($request->hasFile('Courses_Background')) {
+            $input['Courses_Background'] = $request->file('Courses_Background')->store('Backgrounds', 'public');
+
+            @unlink(storage_path('app/public/'. $settings->Courses_Background));
+        }
         foreach ($input as $key => $value) {
             if(!is_null($value))
                 $this->model->set($key, $value);

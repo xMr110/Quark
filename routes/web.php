@@ -11,6 +11,15 @@
 |
 */
 Auth::routes();
+// Route::get('command', function () {
+	
+// 	/* php artisan migrate */
+//     Artisan::call('storage:link');
+//     Artisan::call('translations:import');
+//     Artisan::call('db:seed');
+
+//     dd("Done");
+// });
 
 Route::get('/', 'SiteController@index');
 Route::get('/about', 'SiteController@about');
@@ -30,6 +39,10 @@ Route::get('/products','SiteController@Products');
 Route::get('/product/{product}/information','SiteController@Product');
 Route::get('/partners','SiteController@partners');
 Route::get('/partner/{partner}/information','SiteController@partner');
+
+Route::get('/courses','SiteController@courses');
+Route::get('/course/{course}/information','SiteController@course');
+
 // Admin Area
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
     require_once base_path('routes/admin.php');

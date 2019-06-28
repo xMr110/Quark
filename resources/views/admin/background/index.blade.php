@@ -92,6 +92,7 @@
                                                 @endif
                                             </div>
                                         </div>
+
                                         <div class="col-md-6">
                                             <div class="form-group {{ $errors->has('Partners_Background') ? 'has-danger' : '' }}">
                                                 <label class="control-label">Partners</label>
@@ -112,6 +113,8 @@
                                                 @endif
                                             </div>
                                         </div>
+
+
                                         <div class="col-md-6">
                                             <div class="form-group {{ $errors->has('Literature_Background') ? 'has-danger' : '' }}">
                                                 <label class="control-label">Literature Image</label>
@@ -133,6 +136,26 @@
                                             </div>
                                         </div>
 
+                                        <div class="col-md-6">
+                                            <div class="form-group {{ $errors->has('Courses_Background') ? 'has-danger' : '' }}">
+                                                <label class="control-label">Course Background</label>
+                                                <input type="file" name="Courses_Background" class="form-control">
+                                                @if ($errors->has('Courses_Background'))
+                                                    <small class="form-control-feedback">{{ $errors->first('Courses_Background') }}</small>
+                                                @endif
+                                                @if(isset($settings->Courses_Background) && $settings->Courses_Background != "")
+                                                    <div class="col-md-12" style="margin: 10px">
+                                                        <div class="row el-element-overlay">
+                                                            <div class="el-card-item">
+                                                                <div class="el-card-avatar el-overlay-1">
+                                                                    <img src="{{ url('/storage/' . $settings->Courses_Background) }}" alt="Course" style="background-color: black; max-width: 150px" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                            </div>
+                                        </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group {{ $errors->has('Contact_Background') ? 'has-danger' : '' }}">

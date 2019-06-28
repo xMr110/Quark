@@ -42,9 +42,9 @@
                     </div>
                 </div>
                 @endforeach
+            </div>
         </div>
     </div>
     <!--Portfolio END-->
-
 
 @endsection

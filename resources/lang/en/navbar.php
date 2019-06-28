@@ -7,4 +7,5 @@ return [
     'globalPartners'=>'Global Partners',
     'literature'=>'Literature',
     'contactUs'=>'Contact Us',
+    'course'=>'Courses',
 ];
