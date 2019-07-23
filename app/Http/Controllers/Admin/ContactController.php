@@ -27,9 +27,13 @@ class ContactController extends Controller
 
     public function store(ContactRequest $request)
     {
+        $this->validate($request,['image_path'=>'image|required']);
         $contact = new Contact();
-        $contact->title = $request->get('title');
-        $contact->Subtitle = $request->get('Subtitle');
+
+        if ($request->hasFile('image_path'))
+        {
+            $contact->image_path = $request->file('image_path')->store('contacts','public');
+        }
         $contact->address = $request->get('address');
         $contact->phone = $request->get('phone');
         $contact->mobile = $request->get('mobile');
@@ -45,9 +49,18 @@ class ContactController extends Controller
     }
     public function update(ContactRequest $request,$id)
     {
+
         $contact =Contact::findOrFail($id);
-        $contact->title = $request->get('title');
-        $contact->Subtitle = $request->get('Subtitle');
+        if ($request->hasFile('image_path'))
+        {
+            if (file_exists(storage_path('/storage/'.$contact->image_path)))
+            {
+                unlink(storage_path('/storage/'.$contact->image_path));
+            }
+            else{
+                $contact->image_path = $request->file('image_path')->store('contacts','public');
+            }
+        }
         $contact->address = $request->get('address');
         $contact->phone = $request->get('phone');
         $contact->mobile = $request->get('mobile');
@@ -64,6 +77,10 @@ class ContactController extends Controller
     public function destroy($id)
     {
         $contact =Contact::findOrFail($id);
+        if (file_exists(storage_path('/storage/'.$contact->image_path)))
+        {
+            unlink(storage_path('/storage/'.$contact->image_path));
+        }
         $contact->delete();
         return redirect(action('Admin\ContactController@index'))->with('success','Contact Deleted');
 

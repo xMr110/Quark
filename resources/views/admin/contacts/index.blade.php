@@ -31,7 +31,7 @@
                     <div class="card">
                         <div class="el-card-item">
                             <div class="el-card-avatar el-overlay-1">
-                                <img style="max-width: 60%; margin-top: 5%; margin-left: auto; margin-right: auto;" src="{{url('/assets/backend/images/contact.png')}}" alt="{{ $contact->title }}"/>
+                                <img style="max-width: 60%; margin-top: 5%; margin-left: auto; margin-right: auto;" src="{{ '/storage/'. $contact->image_path }}" alt="{{ $contact->title }}"/>
                                 <div class="el-overlay">
                                     <ul class="el-info">
                                         <li><a class="btn default btn-outline"
@@ -50,8 +50,7 @@
                                 </div>
                             </div>
                             <div class="el-card-content">
-                                <h3 class="box-title">{{ $contact->title }}</h3>
-                                <h5 class="box-title">{{ $contact->Subtitle }}</h5>
+                                <h3 class="box-title">Contact Card</h3>
                             </div>
                         </div>
                     </div>

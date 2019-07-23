@@ -41,8 +41,8 @@
             <div class="col-md-6 col-sm-12 col-12">
                 <div class="padding-10-perc background-80 background-no-repeat background-center">
                     <div class="section-heading text-left">
-                        <small class="grey-color font-size-20 font-weight-normal">{{isset($settings->HeaderTitle)?$settings->HeaderTitle:''}}</small>
-                        <h4 class="semi-bold font-size-35">{{isset($settings->aboutTitle)?$settings->aboutTitle:''}}</h4>
+                        <h4 class="grey-color font-size-20 font-weight-normal">{{isset($settings->HeaderTitle)?$settings->HeaderTitle:''}}</h4>
+                        <h2 class="semi-bold font-size-35">{{isset($settings->aboutTitle)?$settings->aboutTitle:''}}</h2>
                     </div>
                     <div class="text-content mt-20">
                         {!! isset($settings->aboutDescription)?$settings->aboutDescription:'' !!}

@@ -8,10 +8,10 @@
                     <a href="#"><img style=" max-width: 50%!important;" src="{{isset($settings->footerLogo)?$settings->footerLogo!=''?url('/storage/'.$settings->footerLogo):'':''}}" id="footer_logo" alt="logo"></a>
                     <p class="mt-20">@lang('footer.description')</p>
                     <ul class="social-links-footer">
-                          @if(isset($settings->facebook)&&$settings->facebook!='') <li><a href="{{isset($settings)?$settings->facebook:''}}"><i class="fab fa-facebook"></i></a></li>@endif
-                           @if(isset($settings->twitter)&&$settings->twitter!='') <li><a href="{{isset($settings)?$settings->twitter:''}}"><i class="fab fa-twitter"></i></a></li>@endif
-                           @if(isset($settings->instagram)&&$settings->instagram!='') <li><a href="{{isset($settings)?$settings->instagram:''}}"><i class="fab fa-instagram"></i></a></li>@endif
-                           @if(isset($settings->linkedin)&&$settings->linkedin!='') <li><a href="{{isset($settings)?$settings->linkedin:''}}"><i class="fab fa-linkedin"></i></a></li>@endif
+                          @if(isset($settings->facebook)&&$settings->facebook!='') <li><a style="color: #001487;" href="{{isset($settings)?$settings->facebook:''}}"><i class="fab fa-facebook"></i></a></li>@endif
+                           @if(isset($settings->twitter)&&$settings->twitter!='') <li><a style="color: #001487;" href="{{isset($settings)?$settings->twitter:''}}"><i class="fab fa-twitter"></i></a></li>@endif
+                           @if(isset($settings->instagram)&&$settings->instagram!='') <li><a style="color: #001487;" href="{{isset($settings)?$settings->instagram:''}}"><i class="fab fa-instagram"></i></a></li>@endif
+                           @if(isset($settings->linkedin)&&$settings->linkedin!='') <li><a style="color: #001487;" href="{{isset($settings)?$settings->linkedin:''}}"><i class="fab fa-linkedin"></i></a></li>@endif
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 col-12">

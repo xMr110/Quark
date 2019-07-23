@@ -99,11 +99,11 @@
                 <div class="col-md-6 col-sm-6 col-12">
                     <div class="pl-30-md">
                         <div class="section-heading text-left mt-5">
-                            <small class="uppercase">{{isset($settings)?$settings->HeaderTitle!=''?$settings->HeaderTitle:'':''}}</small>
-                            <h3 class="semi-bold font-size-32">{{isset($settings)?$settings->aboutTitle!=''?$settings->aboutTitle:'':''}}</h3>
+                            <h4>{{isset($settings->HeaderTitle)?$settings->HeaderTitle!=''?$settings->HeaderTitle:'':''}}</h4>
+                            <h2 class="semi-bold font-size-32">{{isset($settings->aboutTitle)?$settings->aboutTitle!=''?$settings->aboutTitle:'':''}}</h2>
                             <div class="section-heading-line line-thin"></div>
                             <div class="text-content">
-                                {!! isset($settings)?$settings->aboutDescription!=''?$settings->aboutDescription:'':'' !!}
+                                {!! isset($settings->aboutDescription)?$settings->aboutDescription!=''?$settings->aboutDescription:'':'' !!}
                             </div>
                         </div>
 
@@ -186,8 +186,8 @@
             <div class="row">
                 <div class="col-md-10 col-sm-10 col-12">
                     <div class="large-heading text-left">
-                        <small class="semi-bold white-color">{{isset($settings)?$settings->videoTitle!=''?$settings->videoTitle:'':''}}</small>
-                        <h4 class="semi-bold white-color">{{isset($settings)?$settings->videoDescription!=''?$settings->videoDescription:'':''}}</h4>
+                        <small class="semi-bold white-color">{{isset($settings->videoTitle)?$settings->videoTitle!=''?$settings->videoTitle:'':''}}</small>
+                        <h4 class="semi-bold white-color">{{isset($settings->videoDescription)?$settings->videoDescription!=''?$settings->videoDescription:'':''}}</h4>
                     </div>
                 </div>
                 <div class="col-md-2 col-sm-2 col-12">
@@ -201,7 +201,7 @@
 
                     <!-- Modal Start -->
                     <div class="izimodal" data-iziModal-width="800px" data-iziModal-fullscreen="true">
-                        <iframe height="415" src="{{isset($settings)?$settings->videoLink!=''?$settings->videoLink:'':''}}" class="full-width shadow-primary"></iframe>
+                        <iframe height="415" src="{{isset($settings->videoLink)?$settings->videoLink!=''?$settings->videoLink:'':''}}" class="full-width shadow-primary"></iframe>
                     </div>
                     <!-- Modal End -->
                 </div>

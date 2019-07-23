@@ -25,31 +25,6 @@
                             <div class="col-md-12">
                                 <h3>
                                     <span class="label label-info">1</span>
-                                    Card Title *
-                                </h3>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="title"> Title </label>
-                                    <input type="text" class="form-control form-control-line"
-                                           name="title"
-                                           placeholder="Title.. "
-                                           value="{{ isset($contact) ? isset($contact->title) ? $contact->title : old("title") ?? '' : old("title") ?? '' }} "/>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="Subtitle"> SubTitle </label>
-                                    <input type="text" class="form-control form-control-line"
-                                           name="Subtitle"
-                                           placeholder="Subtitle.. "
-                                           value="{{ isset($contact) ? isset($contact->title) ? $contact->title : old("Subtitle") ?? '' : old("Subtitle") ?? '' }} "/>
-                                </div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <h3>
-                                    <span class="label label-info">2</span>
                                     Card Information *
                                 </h3>
                             </div>
@@ -113,7 +88,30 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="image">
+                                    <h3>
+                                        <span class="label label-info">2</span>
+                                        Image {{ isset($contact) ? '' : '*' }}
+                                    </h3>
+                                </label>
+                                <input type="file" name="image_path" class="form-control form-control-line">
+                                @if(isset($contact) && $contact->image_path != "")
+                                    <div class="col-md-12" style="margin: 10px">
+                                        <div class="row el-element-overlay">
+                                            <div class="el-card-item">
+                                                <div class="el-card-avatar el-overlay-1">
+                                                    <img src="{{ url('/storage/' . $contact->image_path) }}"
+                                                         alt="Contact Image"
+                                                         style="background-color: black; max-width: 150px"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="col-md-12">
                             <br>

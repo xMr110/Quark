@@ -29,21 +29,17 @@
                 <div class="col-md-4 col-sm-12 col-12">
                     <div class="contact-box-place-office">
                             <div class="row">
-                                <div class="col-md-6 m-0" style="margin: 0!important;">
-                                    <img  style="max-width: 100%!important;" src="{{url('/assets/backend/images/contact.png')}}" alt="">
-                                </div>
-                                <div class="col-md-6" style="margin: 0!important; padding: 0!important;">
-                                    <h4 class="font-size-25" >{{$contact->title}}</h4>
-                                    <h5 class="font-size-20" style="color: #63666A; font-weight: 500!important; ">{{$contact->Subtitle}}</h5>
+                                <div class="col-md-12 m-0" style="margin: 0!important; text-align: center">
+                                    <img  style="max-width: 50%!important;" src="{{'/storage/'.$contact->image_path}}" alt="">
                                 </div>
 
                             </div>
 
                         <ul >
-                                <li ><i class="fas fa-home "></i>{{$contact->address}}</li>
+                                <li><i class="fas fa-home "></i>{{$contact->address}}</li>
                                 <li ><i class="fas fa-envelope-open "></i>{{$contact->email}}</li>
                                 <li  style="display: inline-block" ><i class="fas fa-phone"></i>{{$contact->phone}}</li>
-                               <li style="display: inline-block; margin-left: 5%;"><i class="fas fa-mobile"></i>{{$contact->mobile}}</li>
+                               <li style="display: inline-block; margin-left: 1%;"><i class="fas fa-mobile"></i>{{$contact->mobile}}</li>
                             <br>
                               @if(isset($contact->fax)&&$contact->fax!='')<li  style="display: inline-block"><i class="fas fa-fax"></i>{{$contact->fax}}</li>@endif
                             @if(isset($contact->whatsapp)&&$contact->whatsapp!='')<li  style="display: inline-block;@if(isset($contact->fax)&&$contact->fax!='') margin-left: 5%;@endif>"> <i class="fab fa-whatsapp"></i>{{$contact->whatsapp}}</li>@endif
